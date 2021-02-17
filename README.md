@@ -2,3 +2,6 @@
 
 #Members
 Ami Khalsa
+Jacob Meinershagen
+#Kayla's commenntttt 
+Joshua
