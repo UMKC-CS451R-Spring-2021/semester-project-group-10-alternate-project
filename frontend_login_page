@@ -1,0 +1,43 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+import logo from './logo.svg';
+import './App.css';
+
+var editCount = 0;
+
+function LoginButton(e){
+  console.log("Login Page");
+  const newElement = (
+    <form id="LoginForm">
+      <p id="Username">
+        Username
+        <input type="text"></input>
+      </p>
+      <p id="Password">
+        Password:
+        <input type="text"></input>
+      </p>
+
+      <button onClick={Login}>Login</button>
+    </form>
+  );
+  ReactDOM.render(newElement, document.getElementById("LoginForm"));
+  e.preventDefault();
+}
+
+function App() {
+  return (
+    <div className="App">
+      <h1>Login</h1>
+      <div id="profForm">
+        <form>
+          <p id="Username">Username: {}</p>
+          <p id="Password">Password: {}</p>
+          <button onClick={Login}>Login</button>
+        </form>
+      </div>
+    </div>
+  );
+}
+
+export default App;
