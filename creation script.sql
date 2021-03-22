@@ -1,57 +1,60 @@
-drop table if exists TeacherNotes;
 drop table if exists SemesterTeacher;
 drop table if exists Teacher_Course_Preference;
 drop table if exists SemesterCourses;
 drop table if exists Courses;
 drop table if exists Tenure;
+drop table if exists availability;
 drop table if exists Teachers;
 
 create table Teachers (
-	TeacherId int UNIQUE,
-	TeacherName varchar(50),
-	Tenured boolean
+	teacherId int UNIQUE,
+	teacherName varchar(50),
+	tenured boolean,
+    Notes mediumtext
+);
+
+create table availability (
+	teacherId int,
+    foreign key (teacherId) references Teachers(teacherId),
+    startTime time,
+    endTime time
 );
 
 create table Tenure (
-	Tenured boolean,
-	MaxClasses int
+	tenured boolean,
+	maxClasses int
 );
 
 create table Courses (
-	CourseId int UNIQUE,
-	CourseName varchar(50)
+	courseId int UNIQUE,
+	courseName varchar(50)
 );
 
 create table SemesterCourses (
-	CourseId int,
-	SemesterId varchar(10) UNIQUE,
-	SectionCount int,
-	Finalized boolean,
-	FOREIGN KEY (CourseId) REFERENCES Courses(CourseId)
+	courseId int,
+	semesterId varchar(10) UNIQUE,
+	sectionCount int,
+	finalized boolean,
+	FOREIGN KEY (courseId) REFERENCES Courses(courseId)
 );
 
 
 create table Teacher_Course_Preference (
-	TeacherId int,
-	CourseId int,
-	Preferred boolean,
-	foreign key (TeacherId) references Teachers(TeacherId),
-	foreign key (CourseId) references Courses(CourseId)
+	teacherId int,
+	courseId int,
+	preferred boolean,
+	foreign key (teacherId) references Teachers(teacherId),
+	foreign key (courseId) references Courses(courseId)
 );
 
-create table SemesterTeacher (
-    TeacherId int,
-    CourseId int,
-    SemesterId varchar(10),
-    Teaching boolean,
-    Finalized boolean,
-  	foreign key (TeacherId) references Teachers(TeacherId),
-	foreign key (CourseId) references Courses(CourseId),
-    foreign key (SemesterId) references SemesterCourses(SemesterId)
+create table semesterTeacher (
+    teacherId int,
+    courseId int,
+    semesterId varchar(10),
+    teaching boolean,
+    finalized boolean,
+  	foreign key (teacherId) references Teachers(teacherId),
+	foreign key (courseId) references Courses(courseId),
+    foreign key (semesterId) references SemesterCourses(semesterId)
 );
 
-create table TeacherNotes (
-    TeacherId int,
-    TeacherNote Text,
-    foreign key (TeacherId) references Teachers(TeacherId)
-);
