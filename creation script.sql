@@ -29,12 +29,12 @@ create table Tenure (
 );
 
 create table Courses (
-	courseId int UNIQUE,
+	courseId varchar(10) UNIQUE,
 	courseName varchar(50)
 );
 
 create table SemesterCourses (
-	courseId int,
+	courseId varchar(10),
 	semesterId varchar(10) UNIQUE,
 	sectionCount int,
 	finalized boolean,
@@ -45,7 +45,7 @@ create table SemesterCourses (
 
 create table TeacherCoursePreference (
 	teacherId int,
-	courseId int,
+	courseId varchar(10),
 	preferred boolean,
 	foreign key (teacherId) references Teachers(teacherId),
 	foreign key (courseId) references Courses(courseId)
@@ -53,7 +53,7 @@ create table TeacherCoursePreference (
 
 create table semesterTeacher (
     teacherId int,
-    courseId int,
+    courseId varchar(10),
     semesterId varchar(10),
     numOfSectionsTeaching int,
     finalized boolean,
