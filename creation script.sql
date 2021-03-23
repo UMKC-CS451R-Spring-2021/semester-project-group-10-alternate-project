@@ -55,10 +55,11 @@ create table semesterTeacher (
     teacherId int,
     courseId varchar(10),
     semesterId varchar(10),
-    numOfSectionsTeaching int,
+    sectionId int,
     finalized boolean,
   	foreign key (teacherId) references Teachers(teacherId),
 	foreign key (courseId) references Courses(courseId),
-    foreign key (semesterId) references SemesterCourses(semesterId)
+    foreign key (semesterId) references SemesterCourses(semesterId),
+    PRIMARY KEY (courseId, semesterId, sectionId)
 );
 
