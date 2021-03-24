@@ -6,7 +6,8 @@ drop table if exists TeacherTeachableCourses;
 drop table if exists Tenure;
 drop table if exists availability;
 drop table if exists Teachers;
-DROP TABLE IF EXISTS SemesterId;
+DROP TABLE IF EXISTS Semesters;
+drop table if exists semesterId;
 drop table if exists Courses;
 drop table if exists semesterTeacher;
 SET FOREIGN_KEY_CHECKS=1;
@@ -73,7 +74,7 @@ create table SemesterCourses (
 	createdAt datetime,
     updatedAt datetime,
 	FOREIGN KEY (courseId) REFERENCES Courses(courseId),
-	FOREIGN KEY (semesterId) REFERENCES SemesterId(semesterId),
+	FOREIGN KEY (semesterId) REFERENCES Semesters(semesterId),
     PRIMARY KEY (courseId, semesterId)
 );
 
@@ -102,7 +103,7 @@ create table semesterTeacher (
     updatedAt datetime,
   	foreign key (teacherId) references Teachers(teacherId),
 	foreign key (courseId) references Courses(courseId),
-	FOREIGN KEY (semesterId) REFERENCES SemesterId(semesterId),
+	FOREIGN KEY (semesterId) REFERENCES Semesters(semesterId),
     PRIMARY KEY (teacherId, courseId, semesterId)
 );
 
