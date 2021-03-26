@@ -1,4 +1,4 @@
-use testing;
+use capstone;
 SET FOREIGN_KEY_CHECKS=0;
 drop table if exists TeacherCoursePreference;
 drop table if exists SemesterCourses;
@@ -81,13 +81,12 @@ create table SemesterCourses (
 
 create table TeacherTeachableCourses (
 	id int UNIQUE AUTO_INCREMENT,
-    key (id),
+    primary key (id),
 	teacherId int,
 	courseId varchar(15),
-	preferred boolean NOT NULL,
+	preferred boolean,
 	createdAt datetime,
     updatedAt datetime,
-    primary key(teacherId, courseId),
 	foreign key (teacherId) references Teachers(teacherId),
 	foreign key (courseId) references Courses(courseId)
 );
