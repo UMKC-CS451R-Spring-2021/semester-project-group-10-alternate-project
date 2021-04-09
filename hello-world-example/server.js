@@ -17,7 +17,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // const db = require("./app/models");
-const {DB, USER, PASSWORD, HOST, dialect, pool} = require("../config/db.config.js");
+const {DB, USER, PASSWORD, HOST, dialect, pool} = require("./app/config/db.config.js");
 
 
 const sequelize = new Sequelize(DB, USER, PASSWORD, {
@@ -35,8 +35,8 @@ const sequelize = new Sequelize(DB, USER, PASSWORD, {
 
 sequelize.sync();
 
-require("./teacher.model.js")(sequelize);
-const teachers = require("../controllers/teacher.controller.js")(sequelize);
+require("./app/models/teacher.model.js")(sequelize);
+const teachers = require("./app/controllers/teacher.controller.js")(sequelize);
 
 // simple route
 app.get("/", (req, res) => {

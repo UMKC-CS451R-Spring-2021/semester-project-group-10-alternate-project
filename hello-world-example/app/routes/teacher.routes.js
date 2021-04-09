@@ -17,7 +17,7 @@ module.exports = (app, teachers) => {
   router.put("/:id", teachers.update);
 
   // Delete a Teachers with id
-  router.delete("/:id", teachers.delete);
+  router.delete("/:id", teachers.deleteOne);
 
   // Delete all Teachers
   router.delete("/", teachers.deleteAll);

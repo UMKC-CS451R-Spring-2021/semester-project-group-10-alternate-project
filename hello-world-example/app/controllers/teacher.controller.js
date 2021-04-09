@@ -1,4 +1,5 @@
-const {teachers: Teacher, Sequelize: {Op}} = require("../models");
+const {teachers: Teacher} = require("../models/teacher.model.js");
+const {Op} = require("sequelize");
 
 module.exports = function(sequelize) {
   // Create and Save a new Teacher
