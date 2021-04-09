@@ -1,8 +1,6 @@
-module.exports = app => {
-  const teachers = require("../controllers/teacher.controller.js");
+const router = require("express").Router();
 
-  var router = require("express").Router();
-
+module.exports = (app, teachers) => {
   // Create a new Teacher
   router.post("/", teachers.create);
 
