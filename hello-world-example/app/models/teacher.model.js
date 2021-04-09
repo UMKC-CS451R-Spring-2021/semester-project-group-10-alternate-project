@@ -1,4 +1,6 @@
-module.exports = (sequelize, Sequelize) => {
+const Sequelize = require("sequelize");
+
+module.exports = (sequelize) => {
   const Teacher = sequelize.define("teacher", {
     firstName: {
       type: Sequelize.STRING
