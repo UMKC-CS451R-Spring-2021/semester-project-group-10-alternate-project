@@ -17,7 +17,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // const db = require("./app/models");
-const {DB, USER, PASSWORD, HOST, dialect, pool} = require("./app/config/db.config.js");
+const {DB, USER, PASSWORD, HOST, dialect, pool} = require("./src/config/db.config.js");
 
 
 const sequelize = new Sequelize(DB, USER, PASSWORD, {
@@ -35,8 +35,8 @@ const sequelize = new Sequelize(DB, USER, PASSWORD, {
 
 sequelize.sync();
 
-const TeacherModel = require("./app/models/teacher.model.js")(sequelize);
-const TeacherController = require("./app/controllers/teacher.controller.js")(sequelize, TeacherModel);
+const TeacherModel = require("./src/models/teacher.model.js")(sequelize);
+const TeacherController = require("./src/controllers/teacher.controller.js")(sequelize, TeacherModel);
 
 // simple route
 app.get("/", (req, res) => {
@@ -44,7 +44,7 @@ app.get("/", (req, res) => {
 });
 
 
-require("./app/routes/teacher.routes")(app, TeacherController);
+require("./src/routes/teacher.routes")(app, TeacherController);
 
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;
