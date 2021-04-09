@@ -1,7 +1,5 @@
-const {teachers: Teacher} = require("../models/teacher.model.js");
 const {Op} = require("sequelize");
-
-module.exports = function(sequelize) {
+module.exports = function(sequelize, Teacher) {
   // Create and Save a new Teacher
   async function create(req, res) {
     // Validate request
@@ -12,7 +10,7 @@ module.exports = function(sequelize) {
       return;
     }
   
-    // Create a teacger
+    // Create a teacher
     const teacher = {
       firstName: req.body.firstName,
       lastName: req.body.lastName,
@@ -43,7 +41,7 @@ module.exports = function(sequelize) {
       };
     }
     try {
-      const data = await Teacher.create(query);
+      const data = await Teacher.findAll(query);
       res.send(data)
     } catch (err) {
       res.status(500).send({

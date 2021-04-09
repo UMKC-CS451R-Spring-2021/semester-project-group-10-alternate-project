@@ -35,8 +35,8 @@ const sequelize = new Sequelize(DB, USER, PASSWORD, {
 
 sequelize.sync();
 
-require("./app/models/teacher.model.js")(sequelize);
-const teachers = require("./app/controllers/teacher.controller.js")(sequelize);
+const TeacherModel = require("./app/models/teacher.model.js")(sequelize);
+const TeacherController = require("./app/controllers/teacher.controller.js")(sequelize, TeacherModel);
 
 // simple route
 app.get("/", (req, res) => {
@@ -44,7 +44,7 @@ app.get("/", (req, res) => {
 });
 
 
-require("./app/routes/teacher.routes")(app, teachers);
+require("./app/routes/teacher.routes")(app, TeacherController);
 
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;
