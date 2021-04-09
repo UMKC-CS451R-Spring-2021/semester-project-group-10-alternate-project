@@ -1,7 +1,7 @@
+const Sequelize = require("sequelize");
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
-
 const app = express();
 
 var corsOptions = {
@@ -16,15 +16,35 @@ app.use(bodyParser.json());
 // parse requests of content-type - application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true }));
 
-const db = require("./app/models");
-db.sequelize.sync();
+// const db = require("./app/models");
+const {DB, USER, PASSWORD, HOST, dialect, pool} = require("../config/db.config.js");
+
+
+const sequelize = new Sequelize(DB, USER, PASSWORD, {
+  host: HOST,
+  dialect: dialect,
+  operatorsAliases: false,
+
+  pool: {
+    max: pool.max,
+    min: pool.min,
+    acquire: pool.acquire,
+    idle: pool.idle
+  }
+});
+
+sequelize.sync();
+
+require("./teacher.model.js")(sequelize);
+const teachers = require("../controllers/teacher.controller.js")(sequelize);
 
 // simple route
 app.get("/", (req, res) => {
   res.json({ message: "Welcome to capstone's application." });
 });
 
-require("./app/routes/teacher.routes")(app);
+
+require("./app/routes/teacher.routes")(app, teachers);
 
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;
