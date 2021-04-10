@@ -6,7 +6,7 @@
   "scripts": {
     "start-server": "forever start server.js",
     "stop-server": "forever stop server.js",
-    "start": "npm run start-server && npm run start-client"
+    "start": "npm run start-server && cd ../hello-world-example && npm run start-client"
   },
   "author": "",
   "license": "MIT",
