@@ -1,4 +1,5 @@
-const Express = require("express");
+import Express from "express";
+
 export class TeacherController {
     
     /**
