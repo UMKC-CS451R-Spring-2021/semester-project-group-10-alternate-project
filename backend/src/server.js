@@ -7,7 +7,7 @@ var corsOptions = {
   origin: "http://localhost:3000"
 };
 
-app.use(cors({}));
+app.use(cors(corsOptions));
 
 // parse requests of content-type - application/json
 app.use(express.json());
@@ -18,7 +18,7 @@ app.use(express.urlencoded({ extended: true }));
 // const db = require("./app/models");
 const {DB, USER, PASSWORD, HOST, dialect, pool} = require("./config/db.config.js");
 
-
+// @ts-ignore
 const sequelize = new Sequelize(DB, USER, PASSWORD, {
   host: HOST,
   dialect: dialect,
