@@ -7,7 +7,7 @@ var corsOptions = {
   origin: "http://localhost:3000"
 };
 
-app.use(cors(corsOptions));
+app.use(cors({}));
 
 // parse requests of content-type - application/json
 app.use(express.json());
@@ -16,7 +16,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // const db = require("./app/models");
-const {DB, USER, PASSWORD, HOST, dialect, pool} = require("./src/config/db.config.js");
+const {DB, USER, PASSWORD, HOST, dialect, pool} = require("./config/db.config.js");
 
 
 const sequelize = new Sequelize(DB, USER, PASSWORD, {
@@ -34,8 +34,8 @@ const sequelize = new Sequelize(DB, USER, PASSWORD, {
 
 sequelize.sync();
 
-const TeacherModel = require("./src/models/teacher.model.js")(sequelize);
-const TeacherController = require("./src/controllers/teacher.controller.js")(sequelize, TeacherModel);
+const TeacherModel = require("./models/teacher.model.js")(sequelize);
+const TeacherController = require("./controllers/teacher.controller.js")(sequelize, TeacherModel);
 
 // simple route
 app.get("/", (req, res) => {
@@ -43,7 +43,7 @@ app.get("/", (req, res) => {
 });
 
 
-require("./src/routes/teacher.routes")(app, TeacherController);
+require("./routes/teacher.routes")(app, TeacherController);
 
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;
