@@ -4,14 +4,16 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start-server": "forever start server.js",
+    "stop-server": "forever stop server.js",
+    "start": "npm run start-server && npm run start-client"
   },
   "author": "",
   "license": "MIT",
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.17.1",
+    "forever": "^3.0.4",
     "mysql2": "^2.2.5",
     "sequelize": "^6.6.2"
   }
