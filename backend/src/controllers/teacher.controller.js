@@ -1,6 +1,16 @@
 const {Op} = require("sequelize");
+
+/**
+ * 
+ * @param {*} sequelize 
+ * @param {import("sequelize").ModelCtor<import("sequelize").Model<any, any>>} Teacher 
+ */
 module.exports = function(sequelize, Teacher) {
-  // Create and Save a new Teacher
+  /**
+   * Create and Save a new Teacher
+   * @param {import("express").Request} req 
+   * @param {import("express").Response} res 
+   */
   async function create(req, res) {
     // Validate request
     if (!req.body.firstName) {
@@ -29,7 +39,11 @@ module.exports = function(sequelize, Teacher) {
     }
   }
 
-  // Retrieve all Teachers from the database.
+  /**
+   * Retrieve all Teachers from the database.
+   * @param {import("express").Request} req 
+   * @param {import("express").Response} res 
+   */
   async function findAll(req, res) {
     const firstName = req.query.firstName;
     let query = { where: null };
@@ -50,27 +64,51 @@ module.exports = function(sequelize, Teacher) {
       });
     }
   }
-  // Find a single Teacher with an id
+
+  /**
+   * Find a single Teacher with an id
+   * @param {import("express").Request} req 
+   * @param {import("express").Response} res 
+   */
   async function findOne(req, res) {
     
   }
 
-  // Update a Teacher by the id in the request
+
+  /**
+   * Update a Teacher by the id in the request
+   * @param {import("express").Request} req 
+   * @param {import("express").Response} res 
+   */
   async function update(req, res) {
     
   }
 
-  // Delete a Teacher with the specified id in the request
+  /**
+   * Delete a Teacher with the specified id in the request
+   * @param {import("express").Request} req 
+   * @param {import("express").Response} res 
+   */
   async function deleteOne(req, res) {
     
   }
 
-  // Delete all Teacher from the database.
+
+  /**
+   * Delete all Teacher from the database.
+   * @param {import("express").Request} req 
+   * @param {import("express").Response} res 
+   */
   async function deleteAll(req, res) {
     
   }
 
-  // Find all finalized Teachers
+  
+  /**
+   * Find all finalized Teachers
+   * @param {import("express").Request} req 
+   * @param {import("express").Response} res 
+   */
   async function findAllFinalized(req, res) {
     
   }
