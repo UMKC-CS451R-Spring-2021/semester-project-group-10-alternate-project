@@ -1,8 +1,12 @@
-module.exports = app => {
-  const teachers = require("../controllers/teacher.controller.js");
-
-  var router = require("express").Router();
-
+const Express = require('express');
+/**
+ * 
+ * @param {import('express').Application} app 
+ * @param {import("../../types/teacher.controller").TeacherController} teachers 
+ */
+module.exports = (app, teachers) => {
+  const router = Express.Router();
+  
   // Create a new Teacher
   router.post("/", teachers.create);
 
@@ -19,7 +23,7 @@ module.exports = app => {
   router.put("/:id", teachers.update);
 
   // Delete a Teachers with id
-  router.delete("/:id", teachers.delete);
+  router.delete("/:id", teachers.deleteOne);
 
   // Delete all Teachers
   router.delete("/", teachers.deleteAll);
