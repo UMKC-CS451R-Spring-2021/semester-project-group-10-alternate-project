@@ -1,5 +1,7 @@
+// const tunnel = require('tunnel-ssh');
 module.exports = {
-  HOST: "localhost",
+  HOST: "69.247.200.43",
+  port: "3306",
   USER: "capstone",
   PASSWORD: "secret",
   DB: "testing",
