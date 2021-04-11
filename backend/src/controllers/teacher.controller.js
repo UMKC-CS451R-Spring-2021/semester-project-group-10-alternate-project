@@ -71,7 +71,7 @@ module.exports = function(sequelize, Teacher) {
    * @param {import("express").Response} res 
    */
   async function findOne(req, res) {
-    
+    res.sendStatus(501);
   }
 
 
@@ -81,7 +81,7 @@ module.exports = function(sequelize, Teacher) {
    * @param {import("express").Response} res 
    */
   async function update(req, res) {
-    
+    res.sendStatus(501);
   }
 
   /**
@@ -90,7 +90,7 @@ module.exports = function(sequelize, Teacher) {
    * @param {import("express").Response} res 
    */
   async function deleteOne(req, res) {
-    
+    res.sendStatus(501);
   }
 
 
@@ -100,7 +100,7 @@ module.exports = function(sequelize, Teacher) {
    * @param {import("express").Response} res 
    */
   async function deleteAll(req, res) {
-    
+    res.sendStatus(501);
   }
 
   
@@ -110,7 +110,7 @@ module.exports = function(sequelize, Teacher) {
    * @param {import("express").Response} res 
    */
   async function findAllFinalized(req, res) {
-    
+    res.sendStatus(501);
   }
 
   return {
