@@ -37,6 +37,10 @@ app.get("/", (req, res) => {
 
 require("./teacher.js")(sequelize, app);
 
+app.use((req, res) => {
+  res.sendStatus(404);
+});
+
 module.exports = {
   server: app,
   sequelize: sequelize
