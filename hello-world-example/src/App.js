@@ -1,67 +1,58 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
 import logo from './logo.svg';
+import React, { useState } from 'react';
+
+import Login from './components/Login/Login.js';
 import './App.css';
 
-var editCount = 0;
-
-function editButton(e){
-  console.log("edit function");
-  editCount++;
-  const newElement = (
-    <form id="profForm">
-      <button onClick={editButton}>Edit</button>
-      <button onClick={addButton}>Add New</button>
-      <p id="profID">
-        Prof ID:
-        <input type="text"></input>
-      </p>
-      <p id="profName">
-        Prof Name:
-        <input type="text"></input>
-      </p>
-      <p id="isDraft">Is Draft: {}</p>
-      <p id="profAvailability">Availability: {}</p>
-      <p id="profTeachableCourses">Teachable Courses: {}</p>
-      <p id="profPrefCourses">Preffered Courses: {}</p>
-      <p id="profCurrSchedule">Current Schedule: {}</p>
-      <p id="profNotes">Notes:</p>
-      <textarea></textarea>
-
-      <button>Save Draft</button>
-      <button>Finalize</button>
-    </form>
-  );
-  ReactDOM.render(newElement, document.getElementById("profForm"));
-  e.preventDefault();
-}
-
-
-function addButton(e){
-  console.log("add function");
-  e.preventDefault();
-}
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import Dashboard from './components/Dashboard/Dashboard.js';
 
 function App() {
-  return (
-    <div className="App">
-      <h1>Professor Info</h1>
-      <div id="profForm">
-        <form>
-          <button onClick={editButton}>Edit</button>
-          <button onClick={addButton}>Add New</button>
-          <p id="profID">Prof ID: {}</p>
-          <p id="profName">Prof Name: {}</p>
-          <p id="isDraft">Is Draft: {}</p>
-          <p id="profAvailability">Availability: {}</p>
-          <p id="profTeachableCourses">Teachable Courses: {}</p>
-          <p id="profPrefCourses">Preffered Courses: {}</p>
-          <p id="profCurrSchedule">Current Schedule: {}</p>
-          <p id="profNotes">Notes: {}</p>
-        </form>
-      </div>
-    </div>
-  );
+    const [token, setToken] = useState();
+
+    if (!token) {
+        return <Login setToken = { setToken }
+        />
+    }
+
+    return ( <
+        div className = "App" >
+        <
+        header className = "App-header" >
+        <
+        h1 > Web App < /h1> <
+        BrowserRouter >
+        <
+        Switch >
+        <
+        Route path = "/login" >
+        <
+        Login / >
+        <
+        /Route> <
+        Route path = "/dashboard" >
+        <
+        Dashboard / >
+        <
+        /Route> < /
+        Switch > <
+        /BrowserRouter> <
+        img src = { logo }
+        className = "App-logo"
+        alt = "logo" / >
+        <
+        p >
+        Edit < code > src / App.js < /code> and save to reload. < /
+        p > <
+        a className = "App-link"
+        href = "https://reactjs.org"
+        target = "_blank"
+        rel = "noopener noreferrer" >
+        Learn React <
+        /a> < /
+        header > <
+        /div>
+    );
 }
 
 export default App;
