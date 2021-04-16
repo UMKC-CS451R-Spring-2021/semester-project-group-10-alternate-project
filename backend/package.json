@@ -4,6 +4,7 @@
   "description": "",
   "main": "src/server.js",
   "scripts": {
+    "gen-docs": "node generate-docs.js",
     "start-server": "forever start src/server.js",
     "stop-server": "forever stop src/server.js",
     "start": "npm run start-server && cd ../hello-world-example && npm run start-client"
@@ -17,5 +18,8 @@
     "forever": "^3.0.4",
     "mysql2": "^2.2.5",
     "sequelize": "^6.6.2"
+  },
+  "devDependencies": {
+    "yamljs": "^0.3.0"
   }
 }
