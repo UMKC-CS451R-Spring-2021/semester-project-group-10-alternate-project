@@ -1,5 +1,5 @@
 import React from 'react';
-import './Search.css'
+import './ProfessorInfo.css'
 
 export default function EDIT() {
     return ( <
@@ -26,7 +26,7 @@ export default function EDIT() {
         <
         label >
         <
-        input type = "datetime"
+        input type = "date"
         value = "03/25/2021" / >
         <
         input type = "time"
@@ -56,8 +56,10 @@ export default function EDIT() {
         /label> <
         p >
         <
-        button > CANCEL < /button><button> EDIT</button >
+        button type = "submit" > CANCEL < /button>  <
+        button type = "submit" > EDIT < /button> </
+        p >
         <
-        /p>
+        /div>
     )
 }

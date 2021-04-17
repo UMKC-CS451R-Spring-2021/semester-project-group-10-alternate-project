@@ -1,58 +1,61 @@
-import logo from './logo.svg';
 import React, { useState } from 'react';
-
-import Login from './components/Login/Login.js';
 import './App.css';
 
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import Dashboard from './components/Dashboard/Dashboard.js';
+import { BrowserRouter, Switch, Route, NavLink } from 'react-router-dom';
+import Login from './components/Login/Login'
+import Dashboard from './components/Dashboard/Dashboard';
+import Search from './components/TeacherSearch/Search'
+import ProfessorInfo from './components/ProfessorInfo/ProfessorInfo'
+
+function setToken(userToken) {
+    sessionStorage.setItem('token', JSON.stringify(userToken));
+}
+
+function getToken() {}
 
 function App() {
     const [token, setToken] = useState();
 
-    if (!token) {
-        return <Login setToken = { setToken }
-        />
-    }
-
     return ( <
         div className = "App" >
         <
-        header className = "App-header" >
-        <
-        h1 > Web App < /h1> <
         BrowserRouter >
+        <
+        div >
+        <
+        div className = "header" >
+        <
+        NavLink activeClassName = "active"
+        to = "/login" > Login < /NavLink> <
+        NavLink activeClassName = "active"
+        to = "/dashboard" > Dashboard < /NavLink> <
+        NavLink activeClassName = "active"
+        to = "/search" > Search < /NavLink > <
+        NavLink activeClassName = "active"
+        to = "/ProfessorInfo" > ProfessorInfo < /NavLink>< /
+        div >
+        <
+        div className = "content" >
         <
         Switch >
         <
-        Route path = "/login" >
-        <
-        Login / >
-        <
-        /Route> <
-        Route path = "/dashboard" >
-        <
-        Dashboard / >
-        <
-        /Route> < /
+        Route path = "/login"
+        component = { Login }
+        /> <
+        Route path = "/dashboard"
+        component = { Dashboard }
+        /> <
+        Route path = "/search"
+        component = { Search }
+        /> <
+        Route path = "/ProfessorInfo"
+        component = { ProfessorInfo }
+        /> < /
         Switch > <
-        /BrowserRouter> <
-        img src = { logo }
-        className = "App-logo"
-        alt = "logo" / >
-        <
-        p >
-        Edit < code > src / App.js < /code> and save to reload. < /
-        p > <
-        a className = "App-link"
-        href = "https://reactjs.org"
-        target = "_blank"
-        rel = "noopener noreferrer" >
-        Learn React <
-        /a> < /
-        header > <
-        /div>
+        /div> < /
+        div > <
+        /BrowserRouter> < /
+        div >
     );
 }
-
 export default App;
