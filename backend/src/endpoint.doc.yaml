@@ -1,3 +1,4 @@
+# Documentation can be found here https://swagger.io/docs/specification/about/
 openapi: 3.0.0
 info:
   title: Alternate Project Server API
