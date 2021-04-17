@@ -1,17 +1,20 @@
-import React from 'react';
-//import { Redirect } from 'react-router';
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+// import axios from 'axios';
 import './Login.css'
 
-export default function Login() {
 
-    // const onSubmit = () => {
-    //     // if(userFound)
-    //     return <
-    //         Redirect to = '/Dashboard.js' / >
-    // }
+export default function Login(props) {
+    const [username, setUserName] = useState('');
+    const [password, setPassword] = useState('');
+
+    const handleLogin = () => {
+        props.history.push("/dashboard");
+    }
     return ( <
         div className = "bg" >
         <
+        p > Dashboard < /p > <
         div className = "login-wrapper" >
         <
         div className = "loginID" > < h1 > LoginID < /h1> </div >
@@ -22,6 +25,8 @@ export default function Login() {
         label >
         <
         input type = "text"
+        onChange = { e => setUserName(e.target.value) }
+
         placeholder = "Username" / >
         <
         /label> <
@@ -29,20 +34,22 @@ export default function Login() {
         <
         p > <
         input type = "password"
+        onChange = { e => setPassword(e.target.value) }
         placeholder = " ******" / > < /p> < /
-        label > <
-        div className = "middle" > < p >
+        label > < p > <
+        div >
         <
-        link to = "dashboard.js" >
-        <
-        /link><
-        button type = "submit"
-
-        onClick = "/dashboard.js" > LOGIN < /button> </p > < /
-        div > <
-        /form> < /
+        button className = "loginButton"
+        type = "submit"
+        onclick = { handleLogin } > LOGIN < /button>  < /
+        div > < /p >< /
+        form > < /
         div >
         <
         /div>
     )
+}
+
+Login.propTypes = {
+    setToken: PropTypes.func.isRequired
 }
