@@ -53,9 +53,52 @@ paths:
       tags:
         - "teachers"
       summary: Get all teachers
+      parameters:
+        - in: query
+          name: firstName
+          description: Filter teachers by firstName
+          schema:
+            type: string
       responses:
         '200':
-          description: Successfully fetched all teachers
+          description: Ok
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Teachers"
+              example:
+              - id: 1
+                firstName: "Bob"
+                finalized: false
+                createdAt: "2021-04-17T02:55:56.798Z"
+                updatedAt: "2021-04-17T02:55:56.798Z"
+              - id: 2
+                firstName: "Jill"
+                finalized: false
+                createdAt: "2021-04-17T02:55:56.798Z"
+                updatedAt: "2021-04-17T02:55:56.798Z"
+              - id: 3
+                firstName: "Steven"
+                finalized: false
+                createdAt: "2021-04-17T02:55:56.798Z"
+                updatedAt: "2021-04-17T02:55:56.798Z"
+              - id: 4
+                firstName: "Alex"
+                finalized: false
+                createdAt: "2021-04-17T02:55:56.798Z"
+                updatedAt: "2021-04-17T02:55:56.798Z"
+              - id: 5
+                firstName: "Jane"
+                finalized: false
+                createdAt: "2021-04-17T02:55:56.798Z"
+                updatedAt: "2021-04-17T02:55:56.798Z"
+        '500':
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+              example:
+                message: Some error occured while creating the Teacher!
 components:
   schemas:
     TeacherPost:
