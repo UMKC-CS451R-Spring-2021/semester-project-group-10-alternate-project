@@ -2,7 +2,9 @@ import React from 'react';
 import './Search.css'
 
 export default function Search() {
-    return ( <
+    return (
+        //5 total div tags for the teacher search
+        <
         div className = "search-wrapper" >
         <
         div className = "search-box" >
@@ -13,8 +15,8 @@ export default function Search() {
         <
         div >
         <
-        button type = "submit" > Search < /button> <
-        /div></div >
+        button type = "submit" > Search < /button> < /
+        div > < /div >
 
         <
         p > < h1 > OR < /h1></p >
@@ -22,8 +24,8 @@ export default function Search() {
         <
         div >
         <
-        button type = "submit" > Add New Teacher < /button> <
-        /div> <
+        button type = "submit" > Add New Teacher < /button> < /
+        div > <
         /div>
     )
 }
