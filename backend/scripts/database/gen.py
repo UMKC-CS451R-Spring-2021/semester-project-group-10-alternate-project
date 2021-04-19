@@ -236,9 +236,9 @@ for teacher_index in range(len(all_teachers)):
 
     teacher_data = [
         teacher_index,
-        teacher["firstName"],
-        teacher["middleName"],
-        teacher["lastName"],
+        teacher["firstName"].strip(),
+        teacher["middleName"].strip(),
+        teacher["lastName"].strip(),
         teacher["tenured"],
         teacher["Notes"],
         teacher["finalized"] 
