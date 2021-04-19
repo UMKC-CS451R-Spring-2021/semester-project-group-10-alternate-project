@@ -24,9 +24,11 @@ module.exports = (sequelize, Teacher) => {
   
     // Create a teacher
     const teacher = {
+      teacherId: req.body.teacherId,
       firstName: req.body.firstName,
       lastName: req.body.lastName,
-      finalized: !!req.body.finalized
+      finalized: !!req.body.finalized,
+      tenured: false
     };
   
     try {
