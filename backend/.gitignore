@@ -26,7 +26,10 @@ yarn-error.log*
 # visual studio code
 /.vscode
 
-# these are all 
+# output that does not need to be in the database
 /scripts/database/**/*.csv
 /scripts/database/**/*.sql
 /scripts/database/**/*.json
+
+# server configuration files that do not need to be on github
+/src/config/dev.config.js

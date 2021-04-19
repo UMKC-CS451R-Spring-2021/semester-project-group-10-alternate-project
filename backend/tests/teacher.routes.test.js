@@ -1,7 +1,8 @@
 
 
 const request = require('supertest');
-const {server, sequelize} = require('../src/server.js');
+const config = require('./config/test.config');
+const {server, sequelize} = require('../src/server.js')(config);
 const {describe, it, expect, afterAll} = require("@jest/globals");
 
 describe('Post Endpoints', () => {
