@@ -4,9 +4,7 @@ const express = require("express");
 const cors = require("cors");
 const app = express();
 
-var corsOptions = {
-  origin: "http://localhost:3000"
-};
+var corsOptions = require('./config/cors.config');
 
 app.use(cors(corsOptions));
 
@@ -30,14 +28,15 @@ const sequelize = new Sequelize(DB, USER, PASSWORD, {
 });
 
 sequelize.sync();
+
 // simple route
-app.get("/", (req, res) => {
+app.get("/", (_, res) => {
   res.json({ message: "Welcome to capstone's application." });
 });
 
 require("./teacher.js")(sequelize, app);
 
-app.use((req, res) => {
+app.use((_, res) => {
   res.sendStatus(404);
 });
 
