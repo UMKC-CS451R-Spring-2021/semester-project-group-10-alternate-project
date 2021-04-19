@@ -1,5 +1,5 @@
 module.exports = function(sequelize, app) {
     const TeacherModel = require("./models/teacher.model.js")(sequelize);
-    const TeacherController = require("./controllers/teacher.controller.js")(sequelize, TeacherModel);
-    require("./routes/teacher.routes")(app, TeacherController);
+    const TeacherRouter = require("./routes/teacher.routes")(sequelize, TeacherModel);
+    app.use('/api/teachers', TeacherRouter);
 }
