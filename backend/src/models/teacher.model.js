@@ -7,8 +7,18 @@ const Sequelize = require("sequelize");
  * @returns {Sequelize.ModelCtor<Sequelize.Model<any, any>>}
  */
 module.exports = (sequelize) => {
-  const Teacher = sequelize.define("teacher", {
+  const Teacher = sequelize.define("Teachers", {
+    teacherId: {
+      type: Sequelize.INTEGER,
+      primaryKey: true
+    },
     firstName: {
+      type: Sequelize.STRING
+    },
+    middleName: {
+      type: Sequelize.STRING
+    },
+    lastName: {
       type: Sequelize.STRING
     },
     tenured: {

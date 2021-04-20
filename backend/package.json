@@ -2,10 +2,11 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "",
-  "main": "src/server.js",
+  "main": "src/index.js",
   "scripts": {
-    "start-server": "forever start src/server.js",
-    "stop-server": "forever stop src/server.js",
+    "test": "jest tests/*",
+    "start-server": "forever start src/index.js",
+    "stop-server": "forever stop src/index.js",
     "start": "npm run start-server && cd ../hello-world-example && npm run start-client"
   },
   "author": "",
@@ -17,5 +18,9 @@
     "forever": "^3.0.4",
     "mysql2": "^2.2.5",
     "sequelize": "^6.6.2"
+  },
+  "devDependencies": {
+    "jest": "^26.6.3",
+    "supertest": "^6.1.3"
   }
 }
