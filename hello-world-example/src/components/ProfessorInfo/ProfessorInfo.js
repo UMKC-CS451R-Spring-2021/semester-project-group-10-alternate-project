@@ -2,64 +2,37 @@ import React from 'react';
 import './ProfessorInfo.css'
 
 export default function EDIT() {
-    return ( <
-        div className = "editProf-wrapper" >
-        <
-        h1 > Professor Info < /h1>
+    return ( 
+        <div className = "editProf-wrapper">
+            <div>
+            <div className="prof-title"> <h1> Professor Info </h1></div>
+            <div className="profid-wrapper">
+                <p className="display"> Teacher Name</p> 
+                <p className="display"> Teacher ID </p>
+            </div>
 
-        Teacher Name
-
-        <
-        input type = "text"
-        value = "Name" / >
-
-        <
-        p > ID < /p> <
-        label >
-        <
-        input type = "text"
-        value = "#####" / >
-        <
-        /label> <
-        p > Unavailability < /p>
-
-        <
-        label >
-        <
-        input type = "date"
-        value = "03/25/2021" / >
-        <
-        input type = "time"
-        value = "07:20 to 12:45" / >
-        <
-        /label> <
-        p > Courses < /p> <
-        label >
-        <
-        input type = "text"
-        value = "e.g. Statistical Learning" / >
-        <
-        /label> <
-        p > Prefered Courses < /p> <
-        label >
-        <
-        input type = "text"
-        value = "e.g. Statistical Learning" / >
-        <
-        /label> <
-        p > Notes < /p> <
-        label >
-        <
-        input type = "text"
-        value = "" / >
-        <
-        /label> <
-        p >
-        <
-        button type = "submit" > CANCEL < /button>  <
-        button type = "submit" > EDIT < /button> </
-        p >
-        <
-        /div>
+            </div>
+            <div className="form-titles">
+                <p> Days and Times Unavailable: </p>
+            <div className="unavailability">
+                <p>"03/25/2021"</p>
+                <p>"07:20 to 12:45"</p>
+            </div>
+                
+            <p className="form-titles"> Courses </p> 
+                <p className="course-boxes"> CS 101L</p>
+                <p className="course-boxes"> IT 235</p>
+                <p className="course-boxes"> COM 201</p>
+            <p className="form-titles"> Prefered Courses </p> 
+                <p className="course-boxes"> FILM 101</p>
+                <p className="course-boxes"> COFFEE</p>
+                <p className="course-boxes"> JS 201</p>
+            <p className="form-titles"> Notes </p> 
+                <input className="notes" type = "text" value = "" />
+            </div>
+            <p>
+            <button className="button" type = "submit" > CANCEL </button>  
+            <button className="button" type = "submit" > DONE </button> </p>
+        </div>
     )
 }
