@@ -11,42 +11,25 @@ export default function Login(props) {
     const handleLogin = () => {
         props.history.push("/dashboard");
     }
-    return ( <
-        div className = "bg" >
-        <
-        p > Dashboard < /p > <
-        div className = "login-wrapper" >
-        <
-        div className = "loginID" > < h1 > LoginID < /h1> </div >
-        <
-        p > < /p > <
-        form >
-        <
-        label >
-        <
-        input type = "text"
-        onChange = { e => setUserName(e.target.value) }
-
-        placeholder = "Username" / >
-        <
-        /label> <
-        label >
-        <
-        p > <
-        input type = "password"
-        onChange = { e => setPassword(e.target.value) }
-        placeholder = " ******" / > < /p> < /
-        label > < p > <
-        div >
-        <
-        button className = "loginButton"
-        type = "submit"
-        onclick = { handleLogin } > LOGIN < /button>  < /
-        div > < /p >< /
-        form > < /
-        div >
-        <
-        /div>
+    return ( 
+    <div className = "bg" >
+        <div className = "login-wrapper" >
+            <div className = "loginID" > < h1 > LoginID </h1> 
+            </div>
+            <form >
+            <label >
+            
+                <input className="form-elemts" type = "text" onChange = { e => setUserName(e.target.value) } placeholder = "Username" / >
+                </label> 
+                <label >
+                <p > <input className="form-elemts" type = "password" onChange = { e => setPassword(e.target.value) } placeholder = " ******" / > </p> </label > < p > 
+                <div>
+                <button className = "loginButton" type = "submit" onclick = { handleLogin } > LOGIN </button>  
+                </div > 
+                </p>
+            </form>
+        </div>
+    </div>
     )
 }
 

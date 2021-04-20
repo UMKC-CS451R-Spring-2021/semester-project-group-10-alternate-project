@@ -1,35 +1,36 @@
 .bg {
-    background-color: #2c10ff;
-    color: yellow;
-    text-shadow: #180a0a;
-    text-indent: 2%;
+    background-color: beige;
 }
 
 .login-wrapper {
-    display: flex;
-    flex-direction: column;
     align-items: center;
     position: fixed;
     top: 20%;
-    left: 50%;
-    margin-top: -20px;
-    margin-left: -140px;
-    padding: .5in;
-    border-radius: 20px;
-    background: #eaeaea;
+    left: 40%;
+    padding: 35px 80px;
+    border-radius: 10px;
+    background: #bdb9b9c7;
 }
 
 .loginID {
-    color: #022e21ce;
-    border-radius: 90px;
+    color: #12193bd2;
+    border-radius: 20px;
+    padding: 0px 5px;
+    text-align: center;
     background: #083b6b3f;
-    padding: 0px 25px;
+    font-size: small;
 }
 
+.form-elemts {
+    align-items: center;
+    left: 50%;
+    padding: 5px;
+    border-radius: 3px;
+    text-indent: 15px;
+}
 .loginButton {
-    border-radius: 50px;
-    background-color: rgb(7, 81, 110);
-    margin-top: 10px;
-    padding: 1px 65px;
+    border-radius: 5px;
+    background-color: rgb(42, 48, 51);
+    padding: 1px 63px;
     color: beige;
 }

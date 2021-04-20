@@ -1,20 +1,36 @@
 .dashboard-wrapper {
-    display: flex;
-    flex-direction: column;
     align-items: center;
     position: fixed;
     top: 20%;
-    left: 50%;
-    margin-top: -50px;
-    margin-left: -140px;
-    padding: .5in;
-    border-radius: 20px;
-    background: #eaeaea;
+    left: 40%;
+    padding: 35px 80px;
+    border-radius: 10px;
+    background: #bdb9b9c7;
 }
 
+.dashboard {
+    color: #12193bd2;
+    border-radius: 20px;
+    padding: 0px 5px;
+    text-align: center;
+    background: #083b6b3f;
+    font-size: small;
+}
 .logout {
     border-radius: 50px;
-    background-color: rgb(0, 164, 230);
+    background-color: rgb(42, 48, 51, 230);
     margin-top: 30px;
-    /* padding: 1px 24px; */
+    margin-left: 85px;
+    color: #eaeaea;
+    padding: 0px 24px;
+}
+
+.elements {
+    border-radius: 10px;
+    background-color: rgb(11, 49, 68);
+    padding: 10px 63px;
+    margin: 5px;
+    color: rgb(231, 231, 231);
+    font-size: medium;
+    width: 15em;
 }
