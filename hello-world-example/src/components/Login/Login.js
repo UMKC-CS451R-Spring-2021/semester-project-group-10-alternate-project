@@ -13,12 +13,14 @@ export default function Login(props) {
     }
     return ( 
     <div className = "bg" >
+        <div className="banner">
+            <h1> Banner </h1>
+        </div>
         <div className = "login-wrapper" >
             <div className = "loginID" > < h1 > LoginID </h1> 
             </div>
             <form >
             <label >
-            
                 <input className="form-elemts" type = "text" onChange = { e => setUserName(e.target.value) } placeholder = "Username" / >
                 </label> 
                 <label >

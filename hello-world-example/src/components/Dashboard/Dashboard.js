@@ -8,13 +8,19 @@ function Dashboard(props) {
     const handleLogout = () => {
         props.history.push('/login');
     }
+    
+    // handle click event of teacher button
+    const handleTeacher = () => {
+        props.history.push('../TeacherSearch/Search.js');
+    }
+    
     return ( 
     <div className = "dashboard-wrapper" >
         <div className="dashboard">
             <h1> Dashboard</h1>
         </div>
         <div>
-            <button className="elements" onclick = "../TeacherSearch/Search.js" > Teacher </button> </div> 
+            <button className="elements" type = "button" onclick = "../TeacherSearch/Search.js" > Teacher </button> </div> 
         <div>
             <button className="elements" type = "submit" > Courses </button> </div> 
         <div >
