@@ -34,7 +34,7 @@
 .search-button {
     margin-top: 10px;
     border-radius: 10px;
-    background-color: rgb(42, 48, 51);
+    background-color: rgb(11, 49, 68);
     padding: 7px 30px;
     color: beige;
     font-size: medium;
@@ -46,7 +46,7 @@
 }
 .newprof-button {
     border-radius: 10px;
-    background-color: rgb(42, 48, 51);
+    background-color: rgb(11, 49, 68);
     padding: 8px 15px;
     width: 7em;
     word-wrap: break-word;

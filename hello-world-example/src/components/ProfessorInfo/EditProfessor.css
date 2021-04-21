@@ -1,0 +1,63 @@
+.editProf-wrapper {
+    /* display: flex; */
+    flex-direction: column;
+    align-items: center;
+    top: 20%;
+    left: 40%;
+    padding: 20px 160px;
+    border-radius: 10px;
+    background: #bdb9b9c7;
+}
+
+
+.profid-wrapper {
+    /* display: block; */
+    display: inline-block;
+}
+
+.display {
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+    border-radius: 5px;
+    padding: 2px 3px;
+    /* width: 200px; */
+}
+
+.prof-title {
+    color: #12193bd2;
+    border-radius: 20px;
+    padding: 0px 10px;
+    text-align: center;
+    background: #083b6b3f;
+    font-size: small;
+}
+
+.unavailability {
+    background-color: aquamarine;
+}
+
+.form-titles {
+    font-weight: 500;
+    /* display: inline; */
+}
+.course-boxes {
+    color: yellowgreen;
+    background-color: black;
+    width: 60px;
+    padding: 1px 5px;
+    margin: 10px;
+    text-align: center;
+    display: inline;
+}
+.notes {
+    padding: 40px 50px;
+}
+
+.button {
+    border-radius: 5px;
+    background-color: rgb(42, 48, 51);
+    padding: 3px 10px;
+    margin: 5px;
+    color: beige;
+    left: 10px;
+}
