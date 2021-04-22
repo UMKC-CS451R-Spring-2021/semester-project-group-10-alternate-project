@@ -1,0 +1,40 @@
+.bg {
+    background-color: beige;
+}
+
+.banner {
+    
+}
+
+.login-wrapper {
+    align-items: center;
+    position: fixed;
+    top: 20%;
+    left: 40%;
+    padding: 35px 80px;
+    border-radius: 10px;
+    background: #bdb9b9c7;
+}
+
+.loginID {
+    color: #12193bd2;
+    border-radius: 20px;
+    padding: 0px 5px;
+    text-align: center;
+    background: #083b6b3f;
+    font-size: small;
+}
+
+.form-elemts {
+    align-items: center;
+    left: 50%;
+    padding: 5px;
+    border-radius: 3px;
+    text-indent: 15px;
+}
+.loginButton {
+    border-radius: 5px;
+    background-color: rgb(42, 48, 51);
+    padding: 1px 63px;
+    color: beige;
+}

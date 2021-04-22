@@ -1,67 +1,48 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
 
-var editCount = 0;
+import { BrowserRouter, Switch, Route, NavLink } from 'react-router-dom';
+import Login from './components/Login/Login'
+import Dashboard from './components/Dashboard/Dashboard';
+import Search from './components/TeacherSearch/Search'
+import ProfessorInfo from './components/ProfessorInfo/ProfessorInfo'
+import AddProfessorInfo from './components/ProfessorInfo/AddProfessorInfo'
+import EditProfessor from './components/ProfessorInfo/EditProfessor'
 
-function editButton(e){
-  console.log("edit function");
-  editCount++;
-  const newElement = (
-    <form id="profForm">
-      <button onClick={editButton}>Edit</button>
-      <button onClick={addButton}>Add New</button>
-      <p id="profID">
-        Prof ID:
-        <input type="text"></input>
-      </p>
-      <p id="profName">
-        Prof Name:
-        <input type="text"></input>
-      </p>
-      <p id="isDraft">Is Draft: {}</p>
-      <p id="profAvailability">Availability: {}</p>
-      <p id="profTeachableCourses">Teachable Courses: {}</p>
-      <p id="profPrefCourses">Preffered Courses: {}</p>
-      <p id="profCurrSchedule">Current Schedule: {}</p>
-      <p id="profNotes">Notes:</p>
-      <textarea></textarea>
-
-      <button>Save Draft</button>
-      <button>Finalize</button>
-    </form>
-  );
-  ReactDOM.render(newElement, document.getElementById("profForm"));
-  e.preventDefault();
+function setToken(userToken) {
+    sessionStorage.setItem('token', JSON.stringify(userToken));
 }
 
-
-function addButton(e){
-  console.log("add function");
-  e.preventDefault();
-}
+function getToken() {}
 
 function App() {
-  return (
-    <div className="App">
-      <h1>Professor Info</h1>
-      <div id="profForm">
-        <form>
-          <button onClick={editButton}>Edit</button>
-          <button onClick={addButton}>Add New</button>
-          <p id="profID">Prof ID: {}</p>
-          <p id="profName">Prof Name: {}</p>
-          <p id="isDraft">Is Draft: {}</p>
-          <p id="profAvailability">Availability: {}</p>
-          <p id="profTeachableCourses">Teachable Courses: {}</p>
-          <p id="profPrefCourses">Preffered Courses: {}</p>
-          <p id="profCurrSchedule">Current Schedule: {}</p>
-          <p id="profNotes">Notes: {}</p>
-        </form>
-      </div>
-    </div>
-  );
-}
+    const [token, setToken] = useState();
 
+    return ( 
+        <div className = "App" >
+            <BrowserRouter >
+                <div >
+                    <div className = "header" >
+                        <NavLink activeClassName = "active" to = "/login" > Login ***</NavLink> 
+                        <NavLink activeClassName = "active" to = "/dashboard" > Dashboard ***</NavLink> 
+                        <NavLink activeClassName = "active" to = "/search" > Search ***</NavLink> 
+                        <NavLink activeClassName = "active" to = "/professorInfo" > ProfessorInfo </NavLink>
+                        <NavLink activeClassName = "active" to = "/addProfessorInfo"> AddProfessor </NavLink>
+                        <NavLink activeClassName = "active" to = "/editProfessorInfo"> EditProfessor</NavLink>
+                    </div>
+                    <div className = "content">
+                        <Switch >
+                            <Route path = "/login" component = { Login } /> 
+                            <Route path = "/dashboard" component = { Dashboard } /> 
+                            <Route path = "/search" component = { Search } /> 
+                            <Route path = "/professorInfo" component = { ProfessorInfo } /> 
+                            <Route path = "/addProfessorInfo" component = { AddProfessorInfo } />
+                            <Route path = "/editProfessorInfo" component = { EditProfessor } />
+                        </Switch > 
+                    </div> 
+                </div> 
+            </BrowserRouter> 
+        </div>
+    );
+}
 export default App;
