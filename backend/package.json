@@ -4,9 +4,10 @@
   "description": "",
   "main": "src/index.js",
   "scripts": {
+    "gen-docs": "node generate-docs.js",
     "test": "jest tests/*",
-    "start-server": "forever start src/index.js",
-    "stop-server": "forever stop src/index.js",
+    "start-server": "forever start src/server.js",
+    "stop-server": "forever stop src/server.js",
     "start": "npm run start-server && cd ../hello-world-example && npm run start-client"
   },
   "author": "",
@@ -21,6 +22,7 @@
   },
   "devDependencies": {
     "jest": "^26.6.3",
+    "yamljs": "^0.3.0",
     "supertest": "^6.1.3"
   }
 }
