@@ -1,16 +1,18 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-// import axios from 'axios';
 import './Login.css'
-
+import http from "./http-common";
 
 export default function Login(props) {
     const [username, setUserName] = useState('');
     const [password, setPassword] = useState('');
 
     const handleLogin = () => {
-        props.history.push("/dashboard");
+        // props.history.push("/dashboard");
+        
+        http.get("/teachers").then(console.log);
     }
+
     return ( 
     <div className = "bg" >
         <div className="banner">
@@ -26,7 +28,7 @@ export default function Login(props) {
                 <label >
                 <p > <input className="form-elemts" type = "password" onChange = { e => setPassword(e.target.value) } placeholder = " ******" / > </p> </label > < p > 
                 <div>
-                <button className = "loginButton" type = "submit" onclick = { handleLogin } > LOGIN </button>  
+                <button className = "loginButton" type = "submit" onClick = { handleLogin } > LOGIN </button>  
                 </div > 
                 </p>
             </form>

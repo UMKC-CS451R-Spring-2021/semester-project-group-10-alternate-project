@@ -32,7 +32,7 @@ export default function EDIT() {
             </div>
             <p>
             <button className="button" type = "submit" > CANCEL </button>  
-            <button className="button" type = "submit" > DONE </button> </p>
+            <button className="button" type = "submit" > EDIT </button> </p>
         </div>
     )
 }
