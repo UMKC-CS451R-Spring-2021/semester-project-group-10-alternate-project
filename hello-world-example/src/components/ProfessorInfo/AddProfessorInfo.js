@@ -1,5 +1,5 @@
 import React from 'react';
-import './AddProfessor.css'
+import './AddProfessorInfo.css'
 
 export default function Add() {
     return ( 
@@ -7,8 +7,10 @@ export default function Add() {
             <h1 > New Professor Info </h1> 
             <form >
                 <p> Teacher Name </p> 
-                <label >
-                    <input type = "text" value = "Name" />
+                <label className="name-wrapper">
+                    <input type = "text" value = "First Name" /><br></br>
+                    <input type = "text" value = "MI." /><br></br>
+                    <input type = "text" value = "Last Name" /><br></br>
                 </label> 
                 <p> Teacher ID </p>
                 <label>

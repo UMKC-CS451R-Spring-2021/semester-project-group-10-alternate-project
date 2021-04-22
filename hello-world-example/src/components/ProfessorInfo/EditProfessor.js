@@ -5,12 +5,10 @@ export default function EDIT() {
     return ( 
         <div className = "editProf-wrapper">
             <div>
-                <div className="prof-title"> <h1> Professor Info </h1></div>
-                    <div className="profid-wrapper">
-                        <p className="display"> First Name</p> 
-                        <p className="display"> MI.</p> 
-                        <p className="display"> Last Name </p>
-                    </div>
+                <div className="prof-title"> <h1> Edit Professor Info </h1></div>
+                    <input type = "text" placeholder = "First Name" / ><br></br>
+                    <input type = "text" placeholder = "MI." / ><br></br>
+                    <input type = "text" placeholder = "Last Name" / ><br></br>
                     <input type = "text" placeholder = "Teacher ID" / >
                 </div>
             <div className="form-titles">
@@ -23,7 +21,8 @@ export default function EDIT() {
                 <p className="course-boxes"> CS 101L</p>
                 <p className="course-boxes"> IT 235</p>
                 <p className="course-boxes"> COM 201</p>
-            <p className="form-titles"> Prefered Courses </p> 
+            {/* <p className="form-titles"> Prefered Courses </p>  */}
+
                 <p className="course-boxes"> FILM 101</p>
                 <p className="course-boxes"> COFFEE</p>
                 <p className="course-boxes"> JS 201</p>

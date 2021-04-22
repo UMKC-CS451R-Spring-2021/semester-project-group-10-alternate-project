@@ -6,7 +6,7 @@ import Login from './components/Login/Login'
 import Dashboard from './components/Dashboard/Dashboard';
 import Search from './components/TeacherSearch/Search'
 import ProfessorInfo from './components/ProfessorInfo/ProfessorInfo'
-import AddProfessor from './components/ProfessorInfo/AddProfessor'
+import AddProfessorInfo from './components/ProfessorInfo/AddProfessorInfo'
 import EditProfessor from './components/ProfessorInfo/EditProfessor'
 
 function setToken(userToken) {
@@ -36,7 +36,7 @@ function App() {
                             <Route path = "/dashboard" component = { Dashboard } /> 
                             <Route path = "/search" component = { Search } /> 
                             <Route path = "/professorInfo" component = { ProfessorInfo } /> 
-                            <Route path = "/addProfessorInfo" component = { ProfessorInfo } />
+                            <Route path = "/addProfessorInfo" component = { AddProfessorInfo } />
                             <Route path = "/editProfessorInfo" component = { EditProfessor } />
                         </Switch > 
                     </div> 
