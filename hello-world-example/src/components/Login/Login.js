@@ -7,10 +7,11 @@ export default function Login(props) {
     const [username, setUserName] = useState('');
     const [password, setPassword] = useState('');
 
-    const handleLogin = () => {
+    const handleLogin = (event) => {
         // props.history.push("/dashboard");
         
         http.get("/teachers").then(console.log);
+        event.preventDefault();
     }
 
     return ( 
