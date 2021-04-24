@@ -1,6 +1,6 @@
 module.exports = {
     cors: {
-        origin: "http://localhost:3000/"
+        origin: "http://localhost:3000"
     },
     db: {
         HOST: "136.32.94.77",
