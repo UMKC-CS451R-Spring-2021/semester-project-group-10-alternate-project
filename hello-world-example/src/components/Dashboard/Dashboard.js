@@ -1,6 +1,8 @@
 import React from 'react';
 import './Dashboard.css'
 import Search from '../TeacherSearch/Search'
+import axios from 'axios'
+import TeacherResource from '../../Resources/TeacherResource'
 
 function Dashboard(props) {
 
@@ -13,6 +15,12 @@ function Dashboard(props) {
     const handleTeacher = () => {
         props.history.push('../TeacherSearch/Search.js');
     }
+
+    const getAllTeachers = () => {
+        (new TeacherResource).get().then(response => {
+            console.log(response);            
+        });
+    }
     
     return ( 
     <div className = "dashboard-wrapper" >
@@ -20,7 +28,7 @@ function Dashboard(props) {
             <h1> Dashboard</h1>
         </div>
         <div>
-            <button className="elements" type = "button" onclick = "../TeacherSearch/Search.js" > Teacher </button> </div> 
+            <button className="elements" type = "button" onClick = { getAllTeachers } > Teacher </button> </div> 
         <div>
             <button className="elements" type = "submit" > Courses </button> </div> 
         <div >

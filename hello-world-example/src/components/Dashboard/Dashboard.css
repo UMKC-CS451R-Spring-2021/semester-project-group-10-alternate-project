@@ -1,8 +1,9 @@
 .dashboard-wrapper {
     align-items: center;
     position: fixed;
-    top: 20%;
-    left: 40%;
+    bottom: 50%;
+    right: 50%;
+    transform: translate(50%, 50%);
     padding: 35px 80px;
     border-radius: 10px;
     background: #bdb9b9c7;
