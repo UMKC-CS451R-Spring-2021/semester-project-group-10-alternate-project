@@ -75,7 +75,16 @@ module.exports = (sequelize, Teacher) => {
    * @param {import("express").Response} res 
    */
   router.get("/finalized", async function findAllFinalized(req, res) {
-    res.sendStatus(501);
+    const _ = req.params.teacherId;
+    try {
+      const response = "Stored procedure for getting all finalized teachers.";
+      res.send(response);
+    } catch (err) {
+      res.status(500).send({
+        message:
+          err.message || "Some error occurred while retrieving semesters."
+      });
+    }
   });
 
   /**
@@ -83,16 +92,42 @@ module.exports = (sequelize, Teacher) => {
    * @param {import("express").Request} req 
    * @param {import("express").Response} res 
    */
-  router.get("/:id",   async function findOne(req, res) {
-    if (isNaN(Number(req.params.id))) {
+  router.get("/id/:teacherId",   async function findOne(req, res) {
+    const teacherId = req.params.teacherId;
+    if (isNaN(Number(teacherId))) {
       res.status(400).send({
         message: "Content can not be empty!"
       });
       return;
     }
-    const id = req.params.id;
+
     try {
-      const response = await sequelize.query('CALL selectTeacherId(:id)', { replacements: {id}});
+      const response = await sequelize.query('CALL selectTeacherId(:id)', { replacements: {teacherId}});
+      res.send(response);
+    } catch (err) {
+      res.status(500).send({
+        message:
+          err.message || "Some error occurred while retrieving teachers."
+      });
+    }
+  });
+
+  /**
+   * Find a single Teacher with provided name
+   * @param {import("express").Request} req 
+   * @param {import("express").Response} res 
+   */
+  router.get("/name/:teacherName",   async function findOne(req, res) {
+    const teacherName = req.params.teacherName;
+    if (isNaN(Number(teacherName))) {
+      res.status(400).send({
+        message: "Content can not be empty!"
+      });
+      return;
+    }
+
+    try {
+      const response = await sequelize.query('CALL selectTeacherByName(:name)', { replacements: {teacherName}});
       res.send(response);
     } catch (err) {
       res.status(500).send({
@@ -108,8 +143,17 @@ module.exports = (sequelize, Teacher) => {
    * @param {import("express").Request} req 
    * @param {import("express").Response} res 
    */
-  router.put("/:id", async function update(req, res) {
-    res.sendStatus(501);
+  router.put("/id/:teacherId", async function update(req, res) {
+    const _ = req.params.teacherId;
+    try {
+      const response = "Stored procedure for updating teacher.";
+      res.send(response);
+    } catch (err) {
+      res.status(500).send({
+        message:
+          err.message || "Some error occurred while retrieving semesters."
+      });
+    }
   });
 
   /**
@@ -117,8 +161,17 @@ module.exports = (sequelize, Teacher) => {
    * @param {import("express").Request} req 
    * @param {import("express").Response} res 
    */
-  router.delete("/:id",  async function deleteOne(req, res) {
-    res.sendStatus(501);
+  router.delete("/id/:teacherId",  async function deleteOne(req, res) {
+    const _ = req.params.teacherId;
+    try {
+      const response = "Stored procedure for deleting a teacher.";
+      res.send(response);
+    } catch (err) {
+      res.status(500).send({
+        message:
+          err.message || "Some error occurred while retrieving semesters."
+      });
+    }
   });
 
   /**
@@ -127,7 +180,16 @@ module.exports = (sequelize, Teacher) => {
    * @param {import("express").Response} res 
    */
   router.delete("/", async function deleteAll(req, res) {
-    res.sendStatus(501);
+    const _ = req.params.teacherId;
+    try {
+      const response = "Stored procedure for deleting all teachers.";
+      res.send(response);
+    } catch (err) {
+      res.status(500).send({
+        message:
+          err.message || "Some error occurred while retrieving semesters."
+      });
+    }
   });
   return router;
 };
