@@ -19,18 +19,17 @@ function App() {
     const [token, setToken] = useState();
 
     return ( 
-        <div className = "App" >
+        <div className = "" >
             <BrowserRouter >
-                <div >
                     <div className = "header" >
-                        <NavLink activeClassName = "active" to = "/login" > Login ***</NavLink> 
-                        <NavLink activeClassName = "active" to = "/dashboard" > Dashboard ***</NavLink> 
-                        <NavLink activeClassName = "active" to = "/search" > Search ***</NavLink> 
+                        <NavLink activeClassName = "active" to = "/login" > Login </NavLink> 
+                        <NavLink activeClassName = "active" to = "/dashboard" > Dashboard </NavLink> 
+                        <NavLink activeClassName = "active" to = "/search" > Search </NavLink> 
                         <NavLink activeClassName = "active" to = "/professorInfo" > ProfessorInfo </NavLink>
                         <NavLink activeClassName = "active" to = "/addProfessorInfo"> AddProfessor </NavLink>
                         <NavLink activeClassName = "active" to = "/editProfessorInfo"> EditProfessor</NavLink>
                     </div>
-                    <div className = "content">
+                    <div className = "">
                         <Switch >
                             <Route path = "/login" component = { Login } /> 
                             <Route path = "/dashboard" component = { Dashboard } /> 
@@ -40,8 +39,8 @@ function App() {
                             <Route path = "/editProfessorInfo" component = { EditProfessor } />
                         </Switch > 
                     </div> 
-                </div> 
             </BrowserRouter> 
+            
         </div>
     );
 }

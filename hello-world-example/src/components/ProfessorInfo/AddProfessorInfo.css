@@ -1,17 +1,36 @@
 .addProf-wrapper {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    position: fixed;
-    top: 15%;
-    left: 50%;
-    margin-top: -50px;
-    margin-left: -140px;
+    align-items: center; /*container shrinks if changed to center*/
+    text-align: center;
     padding: .5in;
     border-radius: 20px;
     background: #eaeaea;
+    width: 40%;
+
+    margin-top: 1rem;
+    margin-left: 10rem;
+    border-radius: 10px;
+}
+
+.newprof-title {
+    color: #12193bd2;
+    border-radius: 50px;
+    padding: 0px 10px;
+    text-align: center;
+    background: #083b6b3f;
+    font-size: small;
 }
 
 .name-wrapper {
-    /* margin: 10px; */
+    /* margin: 05px; */
+    background-color: azure;
+}
+
+
+.button {
+    border-radius: 5px;
+    background-color: rgb(42, 48, 51);
+    padding: 3px 10px;
+    color: beige;
 }

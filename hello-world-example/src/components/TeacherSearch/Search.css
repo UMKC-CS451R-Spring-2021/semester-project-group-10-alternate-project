@@ -1,10 +1,84 @@
-.allsearch-wrapper {
-    text-align: center;
-    position: fixed;
-    top: 20%;
-    left: 40%;
-    padding: 35px 50px;
+body {
+    background-color: honeydew;
+}
+.wrapper {
+    width: 100%;
+    
+    /* new code here */
+    display: flex;
+    margin: 2rem;
+}
+
+
+
+.side-dashboard {
+    width: 10rem;;
+    height: 100%;
+    /* position: fixed; */
+    /* background-color: #f1f1f1; */
+    /* max-width: 300px;
+    width: 100%;  
+    height: auto;
+    float: left;
+    background-color: blue;
+    color: darkgoldenrod; */
+}
+
+.butons {
+    display: flex;
+    font-family: "Sen",sans-serif;
+    padding: .8rem;
+    border-radius: 5px;
+    width: 100%;
+    color: black;
+    cursor: pointer;
+    align-items: center;
+    color: rgba(0,0,0,.5);
+    transition: .28s;
+}
+.butons.active{
+    background-color: rgba(0,0,0,.2);
+    box-shadow: 0 4px 8px 0 rgba(50, 13, 184, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    color: black;
+    transition: .28s;
+  }
+  .butons:hover{
+    color: blue;
+  }
+  .title{
+    /* text-transform: uppercase; */
+    /* font-family: 'Poppins',sans-serif; */
+    /* font-size: 10px; */
+    /* margin-bottom: .2rem; */
+    /* margin-top: 1rem; */
+    
+    /* color: #12193bd2; */
+    /* border-radius: 20px; */
+    padding: 0px 5px;
+    /* text-align: center; */
+    /* background: #083b6b3f; */
+    font-size: small;
+  }
+  
+.main-content {
+    /* width: 80%;
+    height: 70%;
+    background: rgb(0, 234, 255);
+    display: inline-block; */
+    
+
+    margin-top: 2rem;
+    margin-left: 25rem;
     border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.search-content {
+    text-align: center;
+    /* position: fixed; */
+    /* top: 20%;
+    left: 40%; */
+    padding: 35px 50px;
+    /* border-radius: 10px; */
     background: #d6d1d1ab;
 }
 
@@ -23,8 +97,8 @@
 
 .search-placeholder {
     border-color:  #bdb9b9c7;
-    align-items: center;
-    left: 50%;
+    /* align-items: center; */
+    /* left: 50%; */
     padding: 5px 35px;
     border-radius: 10px;
     text-indent: 0px;
@@ -32,7 +106,7 @@
 }
 
 .search-button {
-    margin-top: 10px;
+    margin-top: 30px;
     border-radius: 10px;
     background-color: rgb(11, 49, 68);
     padding: 7px 30px;
@@ -43,8 +117,11 @@
 .or {
     font-weight: 600;
     color: black;
+    
+    
 }
 .newprof-button {
+    margin-top: 05px;
     border-radius: 10px;
     background-color: rgb(11, 49, 68);
     padding: 8px 15px;

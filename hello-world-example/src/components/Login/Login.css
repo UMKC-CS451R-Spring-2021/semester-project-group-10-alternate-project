@@ -1,10 +1,7 @@
-.bg {
-    background-color: beige;
+.body {
+    background-color: rgb(235, 235, 134);
 }
 
-.banner {
-    
-}
 
 .login-wrapper {
     align-items: center;
