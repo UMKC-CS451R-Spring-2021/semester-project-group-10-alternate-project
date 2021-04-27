@@ -1,4 +1,4 @@
-:root {
+/*:root {
     --header-height: 60px;
     --color-yellow: honeydew;
 }
@@ -12,20 +12,42 @@
     width: inherit;
     height: inherit;
     display: flex;
-    /* align-items: flex-start; */
+     align-items: flex-start; 
     flex-wrap: wrap;
     align-content: flex-start;
-}
-
-.header {
-    background-color: var(--color-yellow);
-    text-align: center;
-    color: red;
-    width: inherit;
-    height: var(--header-height);
 }
 
 .content {
     height: auto;
     width: inherit;
+}
+*/
+
+.container {
+    /* background-color: rgb(30, 26, 231);
+    color: yellow; */
+    /* min-height: 20px; */
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    /* padding: 20px; */
+}
+
+.header {
+    background-color: rgb(34, 98, 151);
+    padding: 20px 20px;
+    /* float: right; */
+    max-width: 100%;
+    
+    display: block;
+    text-align: right;
+    padding: 14px 16px;
+    text-decoration: none;
+    
+}
+
+.active {
+    background-color: #e2e619;
+    
 }
