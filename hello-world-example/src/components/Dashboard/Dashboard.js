@@ -1,6 +1,8 @@
 import React from 'react';
 import './Dashboard.css'
 import Search from '../TeacherSearch/Search'
+import axios from 'axios'
+import TeacherResource from '../../Resources/TeacherResource'
 
 function Dashboard(props) {
 
@@ -13,22 +15,28 @@ function Dashboard(props) {
     const handleTeacher = () => {
         props.history.push('/search');
     }
+
+    const getAllTeachers = () => {
+        (new TeacherResource).get().then(response => {
+            console.log(response);            
+        });
+    }
     
     return ( 
-            <div className = "dashboard-wrapper" >
-                <div className="dashboard-title">
-                    <h1> Dashboard</h1>
-                </div>
-                <div>
-                    <button className="elements" type = "button" onClick = { handleTeacher } > Teacher </button> </div> 
-                <div>
-                    <button className="elements" type = "submit" > Courses </button> </div> 
-                <div >
-                    <button className="elements" type = "submit" > Semester </button> </div>
-                <div> 
-                    <input className = 'logout' type = "button" onClick = { handleLogout } value = "Logout" />
-                </div> 
-            </div>
+    <div className = "dashboard-wrapper" >
+        <div className="dashboard">
+            <h1> Dashboard</h1>
+        </div>
+        <div>
+            <button className="elements" type = "button" onClick = { getAllTeachers } > Teacher </button> </div> 
+        <div>
+            <button className="elements" type = "submit" > Courses </button> </div> 
+        <div >
+            <button className="elements" type = "submit" > Semester </button> </div>
+        <div> 
+            <input className = 'logout' type = "button" onClick = { handleLogout } value = "Logout" />
+        </div> 
+    </div>
     )
 }
 
