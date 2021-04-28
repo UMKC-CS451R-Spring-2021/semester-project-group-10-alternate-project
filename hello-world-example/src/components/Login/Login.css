@@ -2,11 +2,17 @@
     background-color: rgb(235, 235, 134);
 }
 
+.top-bar{
+    background-color: blue;
+    color: yellow;
+    /* padding-top: 2%; */
+    height: 3rem;
+}
 
 .login-wrapper {
     align-items: center;
     position: fixed;
-    top: 20%;
+    top: 30%;
     left: 40%;
     padding: 35px 80px;
     border-radius: 10px;

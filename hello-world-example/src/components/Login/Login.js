@@ -20,12 +20,13 @@ export default function Login(props) {
     }
     return ( 
     <div className = "container" >
+        <div className = "top-bar"></div>
         <div className = "login-wrapper" >
             <div className = "loginID" > < h1 > LoginID </h1></div>
             <form >
                 <label><input className="form-elemts" type = "text" onChange = { e => setUserName(e.target.value) } placeholder = "Username" /></label> 
-                <label><p><input className="form-elemts" type = "password" onChange = { e => setPassword(e.target.value) } placeholder = " ******" /> </p> </label>
-                <p><div><button className = "loginButton" type = "submit" onClick = { handleLogin } > LOGIN </button></div></p>
+                <label><p><input className="form-elemts" type = "password" onChange = { e => setPassword(e.target.value) } placeholder = " ******" /> </p> </label> 
+                <p> <div> <button className = "loginButton" type = "submit" onClick = { handleLogin } > LOGIN </button> </div > </p>
             </form>
         </div>
     </div>

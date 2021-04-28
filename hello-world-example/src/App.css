@@ -19,7 +19,7 @@
     text-align: right;
     padding: 14px 16px;
     text-decoration: none;
-    
+    display: none;
 }
 
 .active {

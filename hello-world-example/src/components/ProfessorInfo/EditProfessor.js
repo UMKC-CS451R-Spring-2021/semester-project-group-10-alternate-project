@@ -22,8 +22,9 @@ export default function EDIT(props) {
         props.history.push('/editProfessorInfo');
     }
     return ( 
+        <div className = "container">
+            <div className = "top-bar"></div>
         <div className = "wrapper">
-            
         <div className = "side-dashboard">
                 <div class="title"><h3>Dashboard</h3></div><hr></hr>
                 <div class="butons active" onClick = { handleTeacher } > Teacher </div>
@@ -36,7 +37,6 @@ export default function EDIT(props) {
             <div className = "editProf-wrapper">
                 <div>
                     <div className="prof-title"> <h1> Edit Professor Info </h1></div>
-                    
                         <fieldset className="name-wrapper">
                             <legend><h3>Teacher Name</h3></legend>
                             <label>
@@ -88,13 +88,11 @@ export default function EDIT(props) {
                         <div className="all-buttons">
                             <button className="button" onClick = { back}> CANCEL </button> <button className="button" onClick = { back}> DONE</button >
                         </div>
-                    
                     </div>
-                    
-            
             </div>
-            
         </div>
         </div>
+        </div>
+        
     )
 }

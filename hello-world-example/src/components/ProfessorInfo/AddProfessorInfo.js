@@ -21,6 +21,8 @@ export default function Add(props) {
         props.history.push('/professorInfo');
     }
     return ( 
+        <div className = "container">
+            <div className = "top-bar"></div>
         <div className="wrapper">
             <div className = "side-dashboard">
                 <div class="title"><h3>Dashboard</h3></div><hr></hr>
@@ -77,5 +79,7 @@ export default function Add(props) {
                 </form>
             </div>
         </div>
+        </div>
+        
     )
 }
