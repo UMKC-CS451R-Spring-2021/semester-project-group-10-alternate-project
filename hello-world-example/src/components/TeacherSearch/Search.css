@@ -1,6 +1,7 @@
 body {
     background-color: honeydew;
 }
+
 .wrapper {
     width: 100%;
     
@@ -8,8 +9,6 @@ body {
     display: flex;
     margin: 2rem;
 }
-
-
 
 .side-dashboard {
     width: 10rem;;
@@ -36,16 +35,19 @@ body {
     color: rgba(0,0,0,.5);
     transition: .28s;
 }
+
 .butons.active{
     background-color: rgba(0,0,0,.2);
     box-shadow: 0 4px 8px 0 rgba(50, 13, 184, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     color: black;
     transition: .28s;
-  }
+}
+
   .butons:hover{
     color: blue;
-  }
-  .title{
+}
+
+.title{
     /* text-transform: uppercase; */
     /* font-family: 'Poppins',sans-serif; */
     /* font-size: 10px; */
@@ -58,7 +60,7 @@ body {
     /* text-align: center; */
     /* background: #083b6b3f; */
     font-size: small;
-  }
+}
   
 .main-content {
     /* width: 80%;
@@ -72,6 +74,7 @@ body {
     border-radius: 10px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+
 .search-content {
     text-align: center;
     /* position: fixed; */
@@ -114,7 +117,7 @@ body {
     font-size: medium;
 }
 
-.or {
+.or-divider {
     font-weight: 600;
     color: black;
     
