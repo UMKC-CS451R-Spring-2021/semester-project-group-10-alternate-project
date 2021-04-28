@@ -3,83 +3,79 @@ const {Op} = require("sequelize");
 /**
  * 
  * @param {*} sequelize 
- * @param {import("sequelize").ModelCtor<import("sequelize").Model<any, any>>} Teacher 
+ * @param {import("sequelize").ModelCtor<import("sequelize").Model<any, any>>} Course 
  */
-module.exports = (sequelize, Teacher) => {
+module.exports = (sequelize, Course) => {
   const router = Express.Router();
   
   /**
-   * Create and Save a new Teacher
+   * Create and Save a new course
    * @param {import("express").Request} req 
    * @param {import("express").Response} res 
    */
   router.post("/", async function create(req, res) {
     // Validate request
-    if (!req.body.firstName) {
+    if (!req.body.courseName) {
       res.status(400).send({
         message: "Content can not be empty!"
       });
       return;
     }
   
-    // Create a teacher
-    const teacher = {
-      teacherId: req.body.teacherId,
-      firstName: req.body.firstName,
-      lastName: req.body.lastName,
-      finalized: !!req.body.finalized,
-      tenured: false
+    // Create a course
+    const course = {
+      courseId: req.body.courseId,
+      courseName: req.body.courseName
     };
   
     try {
-      // Save teacher in the database
-      const data = await Teacher.create(teacher);
-      res.send(data)
+      // Save course in the database
+      //const data = await Course.create(course);
+      // this is where we would call a stored procedure
+      // or something to create a course
+
+      res.send("This is the create course stored procedure");
     } catch (err) {
       res.status(500).send({
         message:
-          err.message || "Some error occurred while creating the teacher."
+          err.message || "Some error occurred while creating the course."
       });
     }
   });
 
   /**
-   * Retrieve all Teachers from the database.
+   * Retrieve all Courses from the database.
    * @param {import("express").Request} req 
    * @param {import("express").Response} res 
    */
   router.get("/", async function findAll(req, res) {
-    const firstName = req.query.firstName;
-    let query = { where: null };
-    if (firstName) {
-      query.where = { 
-        firstName: { 
-          [Op.like]: `%${firstName}%` 
-        } 
-      };
+    const courseName = req.query.courseName;
+    response = "hello";
+    if (courseName) {
+      // if searching for all courses matching a name
+      // Replace response with
+      // await sequelize.query('CALL *stored procedure to select by name*(:name)', { replacements: {name}});
+
+      response = "Stored procedure results for all courses where name like";
+      
+    }
+    else{
+      //  Replace response with 
+      // await sequelize.query('CALL *stored procedure to select all*')
+      response = "Stored procedure results for all courses";
     }
     try {
-      const data = await Teacher.findAll(query);
-      res.send(data)
+    res.send(response);
     } catch (err) {
       res.status(500).send({
         message:
-          err.message || "Some error occurred while retrieving teachers."
+          err.message || "Some error occurred while retrieving all courses."
       });
     }
   });
 
   /**
-   * Find all finalized Teachers
-   * @param {import("express").Request} req 
-   * @param {import("express").Response} res 
-   */
-  router.get("/finalized", async function findAllFinalized(req, res) {
-    res.sendStatus(501);
-  });
-
-  /**
-   * Find a single Teacher with an id
+   * Find a single Course with an id
    * @param {import("express").Request} req 
    * @param {import("express").Response} res 
    */
@@ -92,19 +88,21 @@ module.exports = (sequelize, Teacher) => {
     }
     const id = req.params.id;
     try {
-      const response = await sequelize.query('CALL selectTeacherId(:id)', { replacements: {id}});
+      //replace response with:
+      // await sequelize.query('CALL *select course by id(:id)*', { replacements: {id}})
+      const response = "Stored procedure results from select course by id.";
       res.send(response);
     } catch (err) {
       res.status(500).send({
         message:
-          err.message || "Some error occurred while retrieving teachers."
+          err.message || "Some error occurred while retrieving courses."
       });
     }
   });
 
 
   /**
-   * Update a Teacher by the id in the request
+   * Update a Course by the id in the request
    * @param {import("express").Request} req 
    * @param {import("express").Response} res 
    */
@@ -113,7 +111,7 @@ module.exports = (sequelize, Teacher) => {
   });
 
   /**
-   * Delete a Teacher with the specified id in the request
+   * Delete a Course with the specified id in the request
    * @param {import("express").Request} req 
    * @param {import("express").Response} res 
    */
@@ -122,7 +120,7 @@ module.exports = (sequelize, Teacher) => {
   });
 
   /**
-   * Delete all Teacher from the database.
+   * Delete all Course from the database.
    * @param {import("express").Request} req 
    * @param {import("express").Response} res 
    */
