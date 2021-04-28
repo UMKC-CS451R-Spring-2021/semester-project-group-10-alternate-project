@@ -34,6 +34,8 @@ module.exports = function(config) {
   });
 
   require("./teacher.js")(sequelize, app);
+  require("./course.js")(sequelize, app);
+  require("./semester.js")(sequelize, app);
 
   app.use((_, res) => {
     res.sendStatus(404);
