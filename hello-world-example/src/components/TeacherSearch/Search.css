@@ -4,7 +4,6 @@ body {
 
 .wrapper {
     width: 100%;
-    
     /* new code here */
     display: flex;
     margin: 2rem;

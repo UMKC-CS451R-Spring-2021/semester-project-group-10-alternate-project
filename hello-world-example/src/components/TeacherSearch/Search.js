@@ -12,6 +12,11 @@ export default function Search(props) {
     const handleTeacher = () => {
         props.history.push('/search');
     }
+
+    // handle click event of teacher button
+    const handleSemester = () => {
+        props.history.push('/semester');
+    }
     
     // handle click event of add new button
     const addTeacher = () => {
@@ -30,8 +35,8 @@ export default function Search(props) {
                 <div className = "side-dashboard">
                     <div class="title"><h3>Dashboard</h3></div><hr></hr>
                     <div class="butons active" onClick = { handleTeacher } > Teacher </div>
-                    <div class="butons">Courses</div>
-                    <div class="butons">Semester</div>
+                    <div class="butons"onClick = { handleSemester }>Semester</div>
+                    <div class="butons">Courses </div>
                     <div class="butons" onClick = { handleLogout }>Logout</div>
                     {/* <div className = "title">Dashboard</div>
                     <div><button className="elements" onClick = { handleTeacher } > Teacher </button> </div> 

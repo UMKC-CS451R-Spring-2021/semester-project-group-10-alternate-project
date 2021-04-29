@@ -8,6 +8,7 @@ import Search from './components/TeacherSearch/Search'
 import ProfessorInfo from './components/ProfessorInfo/ProfessorInfo'
 import AddProfessorInfo from './components/ProfessorInfo/AddProfessorInfo'
 import EditProfessor from './components/ProfessorInfo/EditProfessor'
+import Semester from './components/Semester/Semester'
 
 function setToken(userToken) {
     sessionStorage.setItem('token', JSON.stringify(userToken));
@@ -28,6 +29,7 @@ function App() {
                         <NavLink activeClassName = "active" to = "/professorInfo" > ProfessorInfo </NavLink>
                         <NavLink activeClassName = "active" to = "/addProfessorInfo"> AddProfessor </NavLink>
                         <NavLink activeClassName = "active" to = "/editProfessorInfo"> EditProfessor</NavLink>
+                        <NavLink activeClassName = "active" to = "/Semester"> Semester</NavLink>
                     </div>
                     <div className = "">
                         <Switch >
@@ -37,6 +39,7 @@ function App() {
                             <Route path = "/professorInfo" component = { ProfessorInfo } /> 
                             <Route path = "/addProfessorInfo" component = { AddProfessorInfo } />
                             <Route path = "/editProfessorInfo" component = { EditProfessor } />
+                            <Route path = "/semester" component = { Semester } />
                         </Switch > 
                     </div> 
             </BrowserRouter> 

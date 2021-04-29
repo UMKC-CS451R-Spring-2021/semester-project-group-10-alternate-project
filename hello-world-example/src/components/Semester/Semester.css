@@ -1,0 +1,34 @@
+.content {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: rgba(206, 200, 200, 0.719);
+    width: 50%;
+    height: 300px;
+    margin-left: 50px;
+    display: inline-block;
+    border-radius: 06px;
+}
+
+.semester-title {
+    color: #12193bd2;
+    border-radius: 50px;
+    padding: 0px 10px;
+    text-align: center;
+    background: #083b6b3f;
+    font-size: small;
+    width: 50%;
+    margin-left: 25%;
+    margin-top: 50px;
+}
+
+.semester-dropdown {
+    color: beige;
+    background-color: #063d70bc;
+    padding: 5px;
+    
+}
+
+.table {
+    text-align: center;
+}

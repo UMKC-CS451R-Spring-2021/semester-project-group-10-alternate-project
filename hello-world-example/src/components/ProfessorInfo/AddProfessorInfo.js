@@ -12,6 +12,10 @@ export default function Add(props) {
     const handleTeacher = () => {
         props.history.push('/search');
     }
+    // handle click event of teacher button
+    const handleSemester = () => {
+        props.history.push('/semester');
+    }
     // handle click event of back button
     const handleSearchBack = () => {
         props.history.push('/search');
@@ -27,13 +31,13 @@ export default function Add(props) {
             <div className = "side-dashboard">
                 <div class="title"><h3>Dashboard</h3></div><hr></hr>
                 <div class="butons active" onClick = { handleTeacher } > Teacher </div>
-                <div class="butons">Courses</div>
+                <div class="butons" onClick = { handleTeacher } >Courses</div>
                 <div class="butons">Semester</div>
                 <div class="butons" onClick = { handleLogout }>Logout</div>
             </div>
                 
             <div className = "addProf-wrapper" >
-                <div className="newprof-title"><h1> New Professor </h1></div>
+                <div className="newprof-title"><h1> Add New Professor </h1></div>
                 <form className="">
                     <fieldset className="name-wrapper">
                         <legend><h3>Teacher Name</h3></legend>
