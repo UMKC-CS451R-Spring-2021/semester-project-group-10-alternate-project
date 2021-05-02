@@ -16,6 +16,9 @@ function Dashboard(props) {
     // handle click event of teacher button
     const handleTeacher = () => {
         props.history.push('/search');
+        (new TeacherResource).get().then(response => {
+            console.log(response);            
+        });
     }
 
     // handle click event of teacher button

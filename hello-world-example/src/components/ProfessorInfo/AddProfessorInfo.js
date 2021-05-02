@@ -31,7 +31,7 @@ export default function Add(props) {
             <div className = "side-dashboard">
                 <div class="title"><h3>Dashboard</h3></div><hr></hr>
                 <div class="butons active" onClick = { handleTeacher } > Teacher </div>
-                <div class="butons" onClick = { handleTeacher } >Courses</div>
+                <div class="butons" onClick = { handleTeacher }>Courses</div>
                 <div class="butons">Semester</div>
                 <div class="butons" onClick = { handleLogout }>Logout</div>
             </div>

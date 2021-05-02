@@ -38,11 +38,6 @@ export default function Search(props) {
                     <div class="butons"onClick = { handleSemester }>Semester</div>
                     <div class="butons">Courses </div>
                     <div class="butons" onClick = { handleLogout }>Logout</div>
-                    {/* <div className = "title">Dashboard</div>
-                    <div><button className="elements" onClick = { handleTeacher } > Teacher </button> </div> 
-                    <div><button className="elements" > Courses </button> </div> 
-                    <div ><button className="elements"> Semester </button> </div>
-                    <div><input className = "logout" onClick = { handleLogout } value = "Logout"/> </div>  */} 
                 </div>
                 <div className = "main-content">
                     <div className = "search-content"> 

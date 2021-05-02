@@ -10,7 +10,7 @@
     border-radius: 06px;
 }
 
-.semester-title {
+.semester-title {   
     color: #12193bd2;
     border-radius: 50px;
     padding: 0px 10px;
@@ -26,9 +26,30 @@
     color: beige;
     background-color: #063d70bc;
     padding: 5px;
-    
+    text-decoration: underline;
 }
 
-.table {
+.table-wrap {
+    background-color: rgba(129, 134, 134, 0.835);
+    justify-content: center;
     text-align: center;
+}
+
+table {
+    align-self: center;
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    /* padding: 20%; */
+}
+  
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 15px;
+    text-align: center;
+}
+  
+tr:nth-child(even) {
+    background-color: #c3c1c1;
 }

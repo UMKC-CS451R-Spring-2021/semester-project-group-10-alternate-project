@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import './App.css';
-
 import { BrowserRouter, Switch, Route, NavLink } from 'react-router-dom';
 import Login from './components/Login/Login'
 import Dashboard from './components/Dashboard/Dashboard';
@@ -19,6 +18,10 @@ function getToken() {}
 function App() {
     const [token, setToken] = useState();
 
+    // if(!token) {
+    //     return <Login setToken={setToken} />
+    // }
+     
     return ( 
         <div className = "" >
             <BrowserRouter >

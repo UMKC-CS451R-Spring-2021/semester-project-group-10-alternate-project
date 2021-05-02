@@ -36,27 +36,27 @@ export default function EDIT(props) {
                     <div className = "content">
                         <div className="semester-title"><h1> Semester Scheduler </h1></div>
                         <div>
-                            <h3> Change Semester  <select className = "semester-dropdown"> <option value = "" selected = "selected">SP 20</option></select></h3>
-                            <div className = "table">
+                            <h3> Semester   <select className = "semester-dropdown"> <option value = "" selected = "selected">SP 20</option></select></h3>
+                            <div className = "">
                                 <table>
-                                    <tr>
+                                    <tr className = "table-wrap">
                                         <th>TEACHER</th>
                                         <th>CourseID</th>
                                         <th>CourseNAME</th>
                                     </tr>
                                     <tr>
                                         <td>Gharibi G.</td>
-                                        <td>Bingham Kendall</td>
-                                        <td>Kevin Hart</td>
-                                    </tr>
-                                    <tr>
                                         <td>ML 4400</td>
-                                        <td>CS 470</td>
-                                        <td>Comedy 101</td>
+                                        <td>Machine Learning</td>
                                     </tr>
                                     <tr>
-                                        <td>Machine Learning</td>
+                                        <td>Bingham Kendall</td>
                                         <td>DBMS</td>
+                                        <td>CS 470</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Kevin Hart</td>
+                                        <td>Comedy 101</td>
                                         <td>Full Standup</td>
                                     </tr>
                                 </table>
