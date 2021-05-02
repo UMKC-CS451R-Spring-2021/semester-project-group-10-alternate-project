@@ -22,16 +22,14 @@ module.exports = (sequelize, Semester) => {
       return;
     }
   
-    // Create a semester
-    const semester = {
-      semesterId: req.body.semesterId
-    };
+    const semesterId = req.body.semesterId
+  
   
     try {
       // Save Semester in the database
       // replace data with await stored procedures to create semester
       // also create semesterCourses and SemesterTeacher
-      const data = "Result of creating semester";
+      const data =  await sequelize.query('CALL insertNewSemester(:semesterId)*', { replacements: {semesterId}});
       
       res.send(data)
     } catch (err) {
@@ -50,20 +48,10 @@ module.exports = (sequelize, Semester) => {
   router.get("/", async function findAll(req, res) {
     const semesterName = req.query.semesterName;
     response = "";
-    if (semesterName) {
-      // if searching for all semester matching a name
-      // Replace response with
-      // await sequelize.query('CALL *stored procedure to select by name*(:name)', { replacements: {name}});
-
-      response = "Stored procedure results for all semesters where name like";
-      res.send(response);
-      
-    }
-    else{
       //  Replace response with 
       // await sequelize.query('CALL *stored procedure to select all*')
-      response = "Stored procedure results for all semesters";
-    }
+      response = await sequelize.query('CALL GetAllSemesters');
+    
     try {
     res.send(response);
     } catch (err) {
@@ -80,18 +68,20 @@ module.exports = (sequelize, Semester) => {
    * @param {import("express").Request} req 
    * @param {import("express").Response} res 
    */
-  router.get("/:id",   async function findOne(req, res) {
-    if (isNaN(Number(req.params.id))) {
+  router.get("/courses/",   async function findCourses(req, res) {
+    const semesterId = req.query.semesterId;
+    if (!semesterId) {
       res.status(400).send({
         message: "Content can not be empty!"
       });
       return;
     }
-    const id = req.params.id;
+    
     try {
       //replace response with:
       // await sequelize.query('CALL *select semester by id(:id)*', { replacements: {id}})
-      const response = "Stored procedure results from select semester by id.";
+      const response = await sequelize.query('CALL getCoursesForSemester(:semesterId)',
+       { replacements: {semesterId}});
       res.send(response);
     } catch (err) {
       res.status(500).send({

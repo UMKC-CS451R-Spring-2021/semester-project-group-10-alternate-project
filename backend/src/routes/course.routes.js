@@ -30,11 +30,12 @@ module.exports = (sequelize, Course) => {
   
     try {
       // Save course in the database
-      //const data = await Course.create(course);
+      const data = sequelize.query('CALL insertNewCourse(:courseId :courseTitle)',
+       { replacements: {courseId, courseTitle} });
       // this is where we would call a stored procedure
       // or something to create a course
 
-      res.send("This is the create course stored procedure");
+      res.send(data);
     } catch (err) {
       res.status(500).send({
         message:
@@ -50,19 +51,24 @@ module.exports = (sequelize, Course) => {
    */
   router.get("/", async function findAll(req, res) {
     const courseName = req.query.courseName;
-    response = "hello";
+    const courseId = req.query.courseId;
+    response = "";
     if (courseName) {
       // if searching for all courses matching a name
       // Replace response with
       // await sequelize.query('CALL *stored procedure to select by name*(:name)', { replacements: {name}});
 
-      response = "Stored procedure results for all courses where name like";
+      response = await sequelize.query('CALL getCoursesLikeName(:courseName)', 
+        { replacements: {courseName}});
       
+    }
+    else if (courseId){
+      response = await sequelize.query('CALL getCoursesById(:courseId)', { replacements: {courseId}});
     }
     else{
       //  Replace response with 
       // await sequelize.query('CALL *stored procedure to select all*')
-      response = "Stored procedure results for all courses";
+      response = await sequelize.query('CALL getCourses');
     }
     try {
     res.send(response);
@@ -70,32 +76,6 @@ module.exports = (sequelize, Course) => {
       res.status(500).send({
         message:
           err.message || "Some error occurred while retrieving all courses."
-      });
-    }
-  });
-
-  /**
-   * Find a single Course with an id
-   * @param {import("express").Request} req 
-   * @param {import("express").Response} res 
-   */
-  router.get("/:id",   async function findOne(req, res) {
-    if (isNaN(Number(req.params.id))) {
-      res.status(400).send({
-        message: "Content can not be empty!"
-      });
-      return;
-    }
-    const id = req.params.id;
-    try {
-      //replace response with:
-      // await sequelize.query('CALL *select course by id(:id)*', { replacements: {id}})
-      const response = "Stored procedure results from select course by id.";
-      res.send(response);
-    } catch (err) {
-      res.status(500).send({
-        message:
-          err.message || "Some error occurred while retrieving courses."
       });
     }
   });
