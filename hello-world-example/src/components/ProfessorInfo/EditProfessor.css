@@ -1,15 +1,22 @@
-.editProf-wrapper {
-    /* display: flex; */
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    top: 20%;
-    left: 40%;
-    padding: 20px 160px;
+.main {
+    background-color: rgb(5, 96, 175);
+    margin-top: 2rem;
+    margin-left: 5rem;
     border-radius: 10px;
-    background: #bdb9b9c7;
+    width: 60%;
 }
 
+.editProf-wrapper {
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* align-items: center; */
+    /* justify-content: center; */
+    top: 20%;
+    left: 40%;
+    padding: 20px 80px;
+    border-radius: 10px;
+    background: #eaeaea;
+}
 
 .profid-wrapper {
     /* display: block; */
@@ -35,7 +42,6 @@
 
 .unavailability {
     text-align: center;
-
 }
 
 .form-titles {

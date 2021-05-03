@@ -1,14 +1,14 @@
 .dashboard-wrapper {
     align-items: center;
     position: fixed;
-    top: 20%;
-    left: 40%;
+    left: 35%;
+    top: 25%;
     padding: 35px 80px;
     border-radius: 10px;
     background: #bdb9b9c7;
 }
 
-.dashboard {
+.dashboard-title {
     color: #12193bd2;
     border-radius: 20px;
     padding: 0px 5px;
@@ -20,9 +20,9 @@
     border-radius: 50px;
     background-color: rgb(42, 48, 51, 230);
     margin-top: 30px;
-    margin-left: 85px;
+    margin-left: 80px;
     color: #eaeaea;
-    padding: 0px 24px;
+    padding: 0px 25px;
 }
 
 .elements {

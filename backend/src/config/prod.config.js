@@ -3,7 +3,7 @@ module.exports = {
         origin: "http://localhost:3000"
     },
     db: {
-        HOST: "136.32.94.77",
+        HOST: "69.247.200.43",
         USER: "capstone",
         PASSWORD: "secret",
         DB: "testing",

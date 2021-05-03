@@ -1,26 +1,22 @@
 .editProf-wrapper {
-    /* display: flex; */
+    display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    top: 20%;
-    left: 40%;
-    padding: 20px 160px;
+    /* align-items: center; */
+    /* top: 20%; */
+    /* padding: 20px 16px; */
     border-radius: 10px;
-    background: #bdb9b9c7;
+    /* background: #bdb9b9c7; */
+    margin-top: 1rem;
+    border-radius: 10px;
+    text-align: center;
 }
 
-
-.profid-wrapper {
-    background-color: rgb(63, 61, 58);
-    padding: 0.5px 3px;
-    border-radius: 5px;
-    width: 210px;
-    left: 10px;
-}
 
 .display {
     background-color: rgb(255, 255, 255);
-    text-align: center;
+    /* text-align: center; */
     border-radius: 5px;
     padding: 2px 3px;
     width: 200px;
@@ -36,13 +32,18 @@
 }
 
 .unavailability {
+    align-self: center;
     background-color: aquamarine;
+    border-radius: 5px;
+    padding: 2px 3px;
+    width: 300px;
 }
 
 .form-titles {
     font-weight: 500;
     /* display: inline; */
 }
+
 .course-boxes {
     color: yellowgreen;
     background-color: black;
