@@ -3,18 +3,31 @@
 }
 
 .top-bar{
-    background-color: blue;
-    color: yellow;
-    /* padding-top: 2%; */
-    height: 3rem;
+    background-color: rgb(11, 92, 163);;
+    padding: 5px;
+    height: 4rem;
+}
+
+.welcome {
+    float: right;
+    margin: 20px;
+    padding: 5px;
+    font-size: larger;
+    /* background-color: bisque; */
+}
+
+.login-icon {
+    /* float: left; */
+    border-radius: 50%;
+    padding: rem 0rem 0rem 1rem;
+    text-align: center;
 }
 
 .bg-img {
     background-image: url(./bg_img.jpg);
     background-color: rgba(0, 0, 0, 0.815);
     background-repeat: no-repeat;
-    /* width: 350px; */
-    padding: 24.5% 30%;
+    padding: 25% 30%;
     filter: blur(12px);
 }
 
@@ -32,7 +45,7 @@
 .loginID {
     color: #12193bd2;
     border-radius: 20px;
-    padding: 0px 5px;
+    padding: 0px 3px;
     text-align: center;
     background: #083b6b3f;
     font-size: small;

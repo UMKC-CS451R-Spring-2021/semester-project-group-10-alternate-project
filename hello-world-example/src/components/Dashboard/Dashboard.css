@@ -1,17 +1,9 @@
-/* .welcome {
-    color: black;
-    float: right;
-    margin: 20px;
-    padding: 5px;
-    background-color: bisque;
-} */
-
 .dashboard-wrapper {
     align-items: center;
     position: fixed;
     left: 37%;
-    top: 25%;
-    padding: 35px 80px;
+    top: 20%;
+    padding: 80px 80px;
     border-radius: 10px;
     background: #bdb9b9c7;
     box-shadow: 0 4px 80px 0 rgba(0, 0, 0, 0.335), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -21,6 +13,7 @@
     color: #12193bd2;
     border-radius: 20px;
     padding: 0px 5px;
+    margin: 0rem 1rem 2rem 1rem;
     text-align: center;
     background: #083b6b3f;
     font-size: small;

@@ -24,13 +24,13 @@ export default function Login(props) {
         {/* <div className = "top-bar"></div> */}
         <div className = "bg-img"></div>
         <div className = "login-wrapper" >
-            {/* <div className = ""><img src="/uicon.png" alt="icon" width="50" height="60"/></div> */}
+            <div className = "login-icon"><img src={ uicon} alt="icon" width="60" height="60"/></div>
             <div className = "loginID" > <h1> Login </h1></div>
-            <form >
-                <label><input className="form-elemts" type = "text" onChange = { e => setUserName(e.target.value) } placeholder = "Username" /></label> 
-                <label><p><input className="form-elemts" type = "password" onChange = { e => setPassword(e.target.value) } placeholder = " ******" /> </p> </label> 
-                <p> <div> <button className = "loginButton" type = "submit" onClick = { handleLogin } > LOGIN </button> </div > </p>
-            </form>
+                <form >
+                    <label><input className="form-elemts" type = "text" onChange = { e => setUserName(e.target.value) } placeholder = "Username" /></label> 
+                    <label><p><input className="form-elemts" type = "password" onChange = { e => setPassword(e.target.value) } placeholder = " ******" /> </p> </label> 
+                    <p> <div> <button className = "loginButton" type = "submit" onClick = { handleLogin } > LOGIN </button> </div > </p>
+                </form>
         </div>
     </div>
     )

@@ -17,6 +17,14 @@
     padding: 0px 80px;
 }
 
-.course-side-checbox {
-    background-color: aquamarine;
+.course--export {
+    float: right;
+}
+.course-side-checkbox {
+    margin: 20px 0px 0px 0px;
+    /* background-color: aquamarine; */
+    font-size: larger;
+    margin-left: 30px;
+    /* display: inline-block; */
+    /* float: left; */
 }

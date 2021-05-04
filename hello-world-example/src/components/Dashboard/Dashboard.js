@@ -1,5 +1,6 @@
 import React from 'react';
 import './Dashboard.css'
+import logo from './logo.png'
 import Search from '../TeacherSearch/Search'
 import Semester from '../Semester/Semester'
 import axios from 'axios'
@@ -34,8 +35,11 @@ function Dashboard(props) {
     return ( 
         <div className = "container">
             <div className = "top-bar">
-                {/* <div className = "welcome"> <h3>Welcome Gina</h3></div>
-                <div className = "welcome"><input className = 'logout' type = "button" onClick = { handleLogout } value = "Logout" /></div>  */}
+                <div className = "top-bar-content">
+                    {/* <div className = "welcome"> Welcome Gina</div>
+                    <div className = "login-icon"><img src={ logo} alt="icon" width="200" height="60"/></div> */}
+                </div>
+                
             </div>
             <div className = "dashboard-wrapper" >
                 <div className="dashboard-title"><h1> Dashboard</h1></div>
@@ -44,8 +48,6 @@ function Dashboard(props) {
                 <div><button className="dashboard-elements" type = "submit" onClick = { handleCourse}> Courses </button> </div>
                 <div><input className = 'logout' type = "button" onClick = { handleLogout } value = "Logout" /></div> 
             </div>
-            <div className = "top-bar"></div>
-            <div id="output"></div>
         </div>
     )
 }
