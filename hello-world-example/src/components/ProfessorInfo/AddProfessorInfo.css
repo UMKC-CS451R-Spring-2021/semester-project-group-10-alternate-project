@@ -35,8 +35,11 @@
 }
 
 .name-wrapper {
-    
     background-color: azure;
+}
+
+.name-wrapper:focus-within {
+    color: teal;
 }
 
 .button {

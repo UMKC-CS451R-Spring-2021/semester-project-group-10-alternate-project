@@ -91,10 +91,14 @@ body {
     padding-bottom: 4px;
 }
 
+.search-box:focus-within {
+    color: rgba(9, 80, 93, 0.616);
+}
+
 .search-instruction {
     font-size: large;
     text-align: center;
-    color: rgb(25, 78, 78);
+    /* color: rgb(25, 78, 78); */
 }
 
 .search-placeholder {
