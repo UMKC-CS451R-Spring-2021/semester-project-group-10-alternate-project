@@ -84,9 +84,13 @@ export default function EDIT(props) {
                                     <input className = "search-placeholder" type = "text" placeholder = "Enter CourseID or Name" / >
                                 </div>
                             </div>
-                            <div className="al-buttons">
-                                <button className="button" onClick = { back}> ADD </button>
+                            <div className = "course-body">
+                                <input className = "course-side-checbox" type = "checkbox"></input>fgfg
+                                
                             </div>
+                            <div className="al-buttons">
+                                    <button className="button" onClick = { back}> ADD </button>
+                            </div> 
                     </div>
             </div>
         </div>

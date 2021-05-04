@@ -46,7 +46,7 @@ export default function EDIT(props) {
                     <div className = "content">
                         <div className="semester-title"><h1> Semester Scheduler </h1></div>
                         <div>
-                            <h3> Semester   <select className = "semester-dropdown"> <option value = "" selected = "selected">SP 20</option></select></h3>
+                            <h3> Semester <select className = "semester-dropdown"> <option value = "" selected = "selected">SP 20</option></select></h3>
                             <div className = "table-wrapper">
                                 <table className="">
                                     <tr className = "table-wrap">

@@ -5,7 +5,7 @@
     text-align: center;
     background-color: rgba(206, 200, 200, 0.719);
     width: 40%;
-    height: 300px;
+    height: 50rem;
     margin-left: 50px;
     margin-right: 7rem;
     display: inline-block;
@@ -33,19 +33,29 @@
     cursor: pointer;
 }
 
+.table-wrapper {
+    background-color: azure;
+    display: inline-block;
+    width: 90%;
+    border-radius: 10px;
+    margin-top: 2rem;
+    
+}
+
 .table-wrap {
     background-color: rgba(129, 134, 134, 0.835);
     justify-content: center;
     text-align: center;
     text-decoration: underline;
+    border-radius: 10px;
 }
 
 table {
+    padding: 5px;
     align-self: center;
     font-family: arial, sans-serif;
     border-collapse: collapse;
     width: 100%;
-    /* padding: 20%; */
     margin-bottom: 30px;
 }
   
