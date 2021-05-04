@@ -7,7 +7,7 @@ import Search from './components/TeacherSearch/Search'
 import ProfessorInfo from './components/ProfessorInfo/ProfessorInfo'
 import AddProfessorInfo from './components/ProfessorInfo/AddProfessorInfo'
 import EditProfessor from './components/ProfessorInfo/EditProfessor'
-import Semester from './components/Semester/Semester'
+import Semester from './components/Semester/semester'
 
 function setToken(userToken) {
     sessionStorage.setItem('token', JSON.stringify(userToken));
@@ -46,7 +46,6 @@ function App() {
                         </Switch > 
                     </div> 
             </BrowserRouter> 
-            
         </div>
     );
 }
