@@ -3,16 +3,11 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* align-items: center; */
-    /* top: 20%; */
-    /* padding: 20px 16px; */
     border-radius: 10px;
-    /* background: #bdb9b9c7; */
     margin-top: 1rem;
     border-radius: 10px;
     text-align: center;
 }
-
 
 .display {
     background-color: rgb(255, 255, 255);
@@ -25,15 +20,17 @@
 .prof-title {
     color: #12193bd2;
     border-radius: 20px;
-    padding: 0px 10px;
+    padding: 0px 20px;
     text-align: center;
     background: #083b6b3f;
     font-size: small;
+    margin-top: 40px
 }
 
 .unavailability {
     align-self: center;
-    background-color: aquamarine;
+    background-color: rgba(30, 160, 160, 0.342);
+    /* color: yellow; */
     border-radius: 5px;
     padding: 2px 3px;
     width: 300px;
@@ -48,11 +45,12 @@
     color: yellowgreen;
     background-color: black;
     width: 60px;
-    padding: 1px 5px;
+    padding: 1px 10px;
     margin: 10px;
     text-align: center;
     display: inline;
 }
+
 .notes {
     padding: 40px 50px;
 }

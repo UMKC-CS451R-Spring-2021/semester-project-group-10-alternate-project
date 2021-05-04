@@ -6,31 +6,47 @@
     padding: .5in;
     border-radius: 20px;
     background: #eaeaea;
-    width: 40%;
-
-    margin-top: 1rem;
+    width: 30%;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
     margin-left: 10rem;
     border-radius: 10px;
+    box-shadow: 0 4px 20px 0 rgba(51, 184, 162, 0.226), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .newprof-title {
     color: #12193bd2;
     border-radius: 50px;
-    padding: 0px 10px;
+    padding: 0px 20px;
     text-align: center;
     background: #083b6b3f;
     font-size: small;
 }
 
-.name-wrapper {
-    /* margin: 05px; */
-    background-color: azure;
+.name-key {
+    margin-left: 30px;
+    float: left;
 }
 
+.name-fields {
+    float: right;
+    margin-right: 30px;
+    margin-bottom: 05px;
+}
+
+.name-wrapper {
+    
+    background-color: azure;
+}
 
 .button {
     border-radius: 5px;
     background-color: rgb(42, 48, 51);
     padding: 3px 10px;
     color: beige;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: teal;
 }

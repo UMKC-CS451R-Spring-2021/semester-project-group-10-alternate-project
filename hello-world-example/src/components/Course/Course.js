@@ -1,5 +1,6 @@
 import React from 'react';
-import './Semester.css'
+import '../Semester/Semester.css'
+import './Course.css'
 
 export default function EDIT(props) {
     // handle click event of teacher button
@@ -15,11 +16,6 @@ export default function EDIT(props) {
     // handle click event of teacher button
     const handleSemester = () => {
         props.history.push('/semester');
-    }
-
-    // handle click event of teacher button
-    const handleCourse = () => {
-        props.history.push('/course');
     }
 
     // handle click event of back button
@@ -40,7 +36,7 @@ export default function EDIT(props) {
                         <div class="title" onClick = { handleDashboard }><h3>Dashboard</h3><hr></hr></div>
                         <div class="sidebar-buttons" onClick = { handleTeacher } > Teacher </div>
                         <div class="sidebar-buttons active" onClick = { handleSemester } >Semester</div>
-                        <div class="sidebar-buttons" onClick = { handleCourse }>Courses</div>
+                        <div class="sidebar-buttons">Courses</div>
                         <div class="sidebar-buttons" onClick = { handleLogout }>Logout</div>
                     </div>
                     <div className = "content">
@@ -79,12 +75,20 @@ export default function EDIT(props) {
                             </div>
                             <div className="al-buttons"><button className="button" onClick = { back}> BACK </button></div>
                         </div>
-                        
                     </div>
-
+                    <div className = "course-side">
+                        <div className = "course-side-content">
+                            <div className="semester-title"><h1> Courses </h1></div>
+                                <div className = "search-box">
+                                    <div className="search-instruction"> Enter CourseID or Name</div>
+                                    <input className = "search-placeholder" type = "text" placeholder = "Enter CourseID or Name" / >
+                                </div>
+                            </div>
+                            <div className="al-buttons">
+                                <button className="button" onClick = { back}> ADD </button>
+                            </div>
+                    </div>
             </div>
-                
-                    
         </div>
     )
 }

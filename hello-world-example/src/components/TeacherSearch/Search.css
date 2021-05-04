@@ -6,14 +6,15 @@ body {
     width: 100%;
     /* new code here */
     display: flex;
-    margin: 2rem;
+    /* margin-left: 2rem; */
 }
 
 .side-dashboard {
-    width: 10rem;;
-    height: 100%;
+    width: 15rem;;
+    /* height: 60rem; */
+    padding-right: 5rem;
     /* position: fixed; */
-    /* background-color: #f1f1f1; */
+    /* background-color: #f19191; */
     /* max-width: 300px;
     width: 100%;  
     height: auto;
@@ -22,12 +23,15 @@ body {
     color: darkgoldenrod; */
 }
 
-.butons {
+.sidebar-buttons {    
+    margin-left: 2rem;
     display: flex;
     font-family: "Sen",sans-serif;
+    font-size: larger;
     padding: .8rem;
+    padding-left: 20px;
     border-radius: 5px;
-    width: 100%;
+    width: 80%;
     color: black;
     cursor: pointer;
     align-items: center;
@@ -35,14 +39,14 @@ body {
     transition: .28s;
 }
 
-.butons.active{
+.sidebar-buttons.active{
     background-color: rgba(0,0,0,.2);
     box-shadow: 0 4px 8px 0 rgba(50, 13, 184, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     color: black;
     transition: .28s;
 }
 
-  .butons:hover{
+.butons:hover{
     color: blue;
 }
 
@@ -51,36 +55,32 @@ body {
     /* font-family: 'Poppins',sans-serif; */
     /* font-size: 10px; */
     /* margin-bottom: .2rem; */
-    /* margin-top: 1rem; */
-    
-    /* color: #12193bd2; */
-    /* border-radius: 20px; */
+    margin-top: 3rem;
+    margin-left: 3rem;   
     padding: 0px 5px;
-    /* text-align: center; */
-    /* background: #083b6b3f; */
-    font-size: small;
+    text-align: center;
+    font-size: larger;
+    cursor: pointer;
 }
   
 .main-content {
-    /* width: 80%;
-    height: 70%;
-    background: rgb(0, 234, 255);
-    display: inline-block; */
-    
-
-    margin-top: 2rem;
-    margin-left: 25rem;
+    /* background-color: rgba(125, 226, 226, 0.349); */
     border-radius: 10px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    /* padding: 2rem; */
+    margin-top: 5rem;
+    margin-left: 25rem;
+    /* border-radius: 10px; */
+    
 }
 
 .search-content {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     text-align: center;
     /* position: fixed; */
     /* top: 20%;
     left: 40%; */
-    padding: 35px 50px;
-    /* border-radius: 10px; */
+    padding: 75px 60px;
+    border-radius: 10px;
     background: #d6d1d1ab;
 }
 
@@ -92,9 +92,9 @@ body {
 }
 
 .search-instruction {
-    font-size: small;
+    font-size: large;
     text-align: center;
-    color: black;
+    color: rgb(25, 78, 78);
 }
 
 .search-placeholder {
@@ -114,16 +114,23 @@ body {
     padding: 7px 30px;
     color: beige;
     font-size: medium;
+    cursor: pointer;
+}
+
+.search-button:hover {
+    background-color: teal;
+    
 }
 
 .or-divider {
     font-weight: 600;
     color: black;
-    
-    
+    margin: 10px;    
 }
+
 .newprof-button {
     margin-top: 05px;
+    margin: 5px;
     border-radius: 10px;
     background-color: rgb(11, 49, 68);
     padding: 8px 15px;
@@ -131,4 +138,8 @@ body {
     word-wrap: break-word;
     color: beige;
     font-size: medium;
+    cursor: pointer;
+}
+.newprof-button:hover {
+    background-color: teal;
 }

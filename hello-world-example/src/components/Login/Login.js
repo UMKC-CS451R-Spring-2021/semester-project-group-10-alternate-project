@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import './Login.css'
 import http from "./http-common";
+import uicon from './uicon.png'
 
 export default function Login(props) {
     const [username, setUserName] = useState('');
@@ -20,9 +21,11 @@ export default function Login(props) {
     }
     return ( 
     <div className = "container" >
-        <div className = "top-bar"></div>
+        {/* <div className = "top-bar"></div> */}
+        <div className = "bg-img"></div>
         <div className = "login-wrapper" >
-            <div className = "loginID" > < h1 > LoginID </h1></div>
+            {/* <div className = ""><img src="/uicon.png" alt="icon" width="50" height="60"/></div> */}
+            <div className = "loginID" > <h1> Login </h1></div>
             <form >
                 <label><input className="form-elemts" type = "text" onChange = { e => setUserName(e.target.value) } placeholder = "Username" /></label> 
                 <label><p><input className="form-elemts" type = "password" onChange = { e => setPassword(e.target.value) } placeholder = " ******" /> </p> </label> 

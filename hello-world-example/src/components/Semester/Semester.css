@@ -1,13 +1,16 @@
 .content {
+    margin-top: 6rem;
     align-items: center;
     justify-content: center;
     text-align: center;
     background-color: rgba(206, 200, 200, 0.719);
-    width: 50%;
+    width: 40%;
     height: 300px;
     margin-left: 50px;
+    margin-right: 7rem;
     display: inline-block;
     border-radius: 06px;
+    box-shadow: 0 4px 20px 0 rgba(51, 184, 162, 0.226), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .semester-title {   
@@ -27,12 +30,14 @@
     background-color: #063d70bc;
     padding: 5px;
     text-decoration: underline;
+    cursor: pointer;
 }
 
 .table-wrap {
     background-color: rgba(129, 134, 134, 0.835);
     justify-content: center;
     text-align: center;
+    text-decoration: underline;
 }
 
 table {
@@ -41,11 +46,11 @@ table {
     border-collapse: collapse;
     width: 100%;
     /* padding: 20%; */
+    margin-bottom: 30px;
 }
   
 td, th {
     border: 1px solid #dddddd;
-    text-align: left;
     padding: 15px;
     text-align: center;
 }

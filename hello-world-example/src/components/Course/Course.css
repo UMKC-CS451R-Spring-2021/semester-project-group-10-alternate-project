@@ -1,0 +1,18 @@
+.course-side {
+    background-color: rgba(206, 200, 200, 0.719);
+    margin-top: 6rem;
+    justify-content: center;
+    text-align: center;
+    display: block;
+    width: 25 rem;
+    height: 50rem;
+    padding-right: 5 rem;
+    border-radius: 20px;
+    margin-right: 3 rem;
+    box-shadow: 0 4px 20px 0 rgba(51, 184, 162, 0.226), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.course-side-content {
+    /* background-color: gray; */
+    padding: 0px 80px;
+}

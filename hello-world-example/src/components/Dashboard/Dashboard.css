@@ -1,11 +1,20 @@
+/* .welcome {
+    color: black;
+    float: right;
+    margin: 20px;
+    padding: 5px;
+    background-color: bisque;
+} */
+
 .dashboard-wrapper {
     align-items: center;
     position: fixed;
-    left: 35%;
+    left: 37%;
     top: 25%;
     padding: 35px 80px;
     border-radius: 10px;
     background: #bdb9b9c7;
+    box-shadow: 0 4px 80px 0 rgba(0, 0, 0, 0.335), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .dashboard-title {
@@ -16,16 +25,22 @@
     background: #083b6b3f;
     font-size: small;
 }
+
 .logout {
     border-radius: 50px;
     background-color: rgb(42, 48, 51, 230);
     margin-top: 30px;
-    margin-left: 80px;
+    margin-left: 70px;
     color: #eaeaea;
-    padding: 0px 25px;
+    padding: 3px 25px;
+    cursor: pointer;
 }
 
-.elements {
+.logout:hover {
+    background-color: teal;
+}
+
+.dashboard-elements {
     border-radius: 10px;
     background-color: rgb(11, 49, 68);
     padding: 10px 63px;
@@ -33,4 +48,9 @@
     color: rgb(231, 231, 231);
     font-size: medium;
     width: 15em;
+    cursor: pointer;
+}
+
+.dashboard-elements:hover{
+    background-color: teal;
 }

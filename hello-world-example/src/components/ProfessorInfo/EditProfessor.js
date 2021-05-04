@@ -21,16 +21,31 @@ export default function EDIT(props) {
     const edit = () => {
         props.history.push('/editProfessorInfo');
     }
+
+    // handle click event of teacher button
+    const handleSemester = () => {
+        props.history.push('/semester');
+    }
+
+    // handle click event of teacher button
+    const handleCourse = () => {
+        props.history.push('/course');
+    }
+    
+    // handle click event of dashboard button
+    const handleDashboard = () => {
+        props.history.push('/dashboard');
+    }
     return ( 
         <div className = "container">
             <div className = "top-bar"></div>
         <div className = "wrapper">
         <div className = "side-dashboard">
-                <div class="title"><h3>Dashboard</h3></div><hr></hr>
-                <div class="butons active" onClick = { handleTeacher } > Teacher </div>
-                <div class="butons">Courses</div>
-                <div class="butons">Semester</div>
-                <div class="butons" onClick = { handleLogout }>Logout</div>
+                <div class="title" onClick = { handleDashboard}><h3>Dashboard</h3><hr></hr></div>
+                <div class="sidebar-buttons active" onClick = { handleTeacher } > Teacher </div>
+                <div class="sidebar-buttons" onClick = { handleSemester }>Semester</div>
+                <div class="sidebar-buttons" onClick = { handleCourse }>Courses</div>
+                <div class="sidebar-buttons" onClick = { handleLogout }>Logout</div>
         </div>
         
         <div className="main">
@@ -38,18 +53,10 @@ export default function EDIT(props) {
                 <div>
                     <div className="prof-title"> <h1> Edit Professor Info </h1></div>
                         <fieldset className="name-wrapper">
-                            <legend><h3>Teacher Name</h3></legend>
-                            <label>
-                                <div>
-                                    First Name: <input type = "text" placeholder = "First Name" />
-                                </div>
-                                <div>
-                                    MI: <input type = "text" placeholder = "MI." />
-                                </div>
-                                <div>
-                                    Last Name: <input type = "text" placeholder = "Last Name" />
-                                </div>
-                            </label> 
+                        <legend><h3>Teacher Name</h3></legend>
+                            <label className = "name-key">First Name: </label> <input className = "name-fields" type = "text" placeholder = "First Name" /><br></br>
+                            <label className = "name-key"> MI: </label> <input className = "name-fields" type = "text" placeholder = "MI." /><br></br>
+                            <label className = "name-key"> Last Name: </label><input className = "name-fields" type = "text" placeholder = "Last Name" required />
                         </fieldset>
                         <fieldset className="name-wrapper">
                             <legend>
@@ -61,22 +68,19 @@ export default function EDIT(props) {
                         </fieldset>
                         
                         <fieldset className="name-wrapper">
-                            <legend><h3>Unavailability</h3></legend>
-                            <label>
-                                <input type = "datetime-local" /> to 
-                                <input type = "time" />
-                            </label> 
+                        <legend><h3>Unavailability</h3></legend>
+                            <label><input className = "name-fields" type = "date" /> 
+                            <input type = "time" /> to <input type = "time" /></label>  
                         </fieldset>
 
-                        
-                        <p className="form-titles"> Courses </p> 
-                            <p className="course-boxes"> CS 101L</p>
-                            <p className="course-boxes"> IT 235</p>
-                            <p className="course-boxes"> COM 201</p>
-                        <p className="form-titles"> Prefered Courses </p> 
-                            <p className="course-boxes"> FILM 101</p>
-                            <p className="course-boxes"> COFFEE</p>
-                            <p className="course-boxes"> JS 201</p>
+                        <fieldset className="name-wrapper">
+                            <legend><h3>Courses</h3></legend>
+                            <label className = "name-key">General: </label> 
+                                <input className = "name-fields" type = "text" placeholder = "e.g. Statistical Learning" /> <br></br>
+                            <label className = "name-key"> Preferred: </label>
+                                <input className = "name-fields" type = "text" placeholder = "e.g. Statistical Learning" />
+                        </fieldset>
+                
                             <fieldset className="name-wrapper">
                         <legend>
                         <h3>Notes</h3>
