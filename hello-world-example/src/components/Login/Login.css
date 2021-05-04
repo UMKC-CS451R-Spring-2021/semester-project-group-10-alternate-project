@@ -35,8 +35,8 @@
     align-items: center;
     position: fixed;
     top: 25%;
-    left: 40%;
-    padding: 60px 70px 40px 80px;
+    left: 42%;
+    padding: 45px 80px 30px 80px;
     border-radius: 10px;
     background: #bdb9b9;
     box-shadow: 0 4px 20px 0 rgba(51, 184, 162, 0.226), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -59,6 +59,15 @@
     text-indent: 15px;
 }
 
+.form-elemts:invalid:required {
+    border: 2px dashed rgba(226, 138, 138, 0.37);
+    /* background-image: linear-gradient(to right, pink, lightgreen); */
+}
+
+.form-elemts:valid {
+    border: 2px solid teal;
+}
+
 .loginButton {
     border-radius: 5px;
     background-color: rgb(42, 48, 51);
@@ -70,4 +79,11 @@
 
 .loginButton:hover{
     background-color: teal;
+}
+
+.login-error {
+    color: rgba(255, 0, 0, 0.459);
+    word-wrap: break-word;
+    width: 180px;
+    text-align: center;
 }
