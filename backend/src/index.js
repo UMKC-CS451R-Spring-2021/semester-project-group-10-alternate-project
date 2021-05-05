@@ -1,4 +1,4 @@
-const isDevMode = process.env.DEV == "false";
+const isDevMode = process.env.DEV == "true";
 if (isDevMode) {
   console.log('Running in development mode.');
 }
