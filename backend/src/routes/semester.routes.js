@@ -15,21 +15,20 @@ module.exports = (sequelize, Semester) => {
    */
   router.post("/", async function create(req, res) {
     // Validate request
-    if (!req.body.semesterId) {
+    const semesterId = req.query.semesterId
+    if (!semesterId) {
       res.status(400).send({
         message: "Content can not be empty!"
       });
       return;
     }
   
-    const semesterId = req.body.semesterId
-  
   
     try {
       // Save Semester in the database
       // replace data with await stored procedures to create semester
       // also create semesterCourses and SemesterTeacher
-      const data =  await sequelize.query('CALL insertNewSemester(:semesterId)*', { replacements: {semesterId}});
+      const data =  await sequelize.query('CALL insertNewSemester(:semesterId)', { replacements: {semesterId}});
       
       res.send(data)
     } catch (err) {
@@ -46,12 +45,17 @@ module.exports = (sequelize, Semester) => {
    * @param {import("express").Response} res 
    */
   router.get("/", async function findAll(req, res) {
-    const semesterName = req.query.semesterName;
+    const semesterId = req.query.semesterId;
     response = "";
-      //  Replace response with 
-      // await sequelize.query('CALL *stored procedure to select all*')
+
+    if(semesterId){
+      response = await sequelize.query('CALL getSemesterById(:semesterId)',
+       { replacements: {semesterId}});
+    }
+    else{
       response = await sequelize.query('CALL GetAllSemesters');
-    
+    }
+ 
     try {
     res.send(response);
     } catch (err) {

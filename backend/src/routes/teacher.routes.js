@@ -49,28 +49,25 @@ module.exports = (sequelize, Teacher) => {
    * @param {import("express").Response} res 
    */
   router.get("/", async function findAll(req, res) {
-    const firstName = req.query.firstName;
-    const teacherId = req.params.teacherId;
+    const teacherId = req.query.teacherId;
+    const lastName = req.query.lastName;
     resposne = "";
     let query = { where: null };
     if(teacherId){
-      response = await sequelize.query('CALL selectTeacherById(:id)', { replacements: {id}});
-    }
-    else if (firstName) {
-      query.where = { 
-        firstName: { 
-          [Op.like]: `%${firstName}%` 
-        } 
-      };
+      response = await sequelize.query('CALL selectTeacherById(:teacherId)',
+       { replacements: {teacherId}});
     }
     else if (lastName) {
       response = await sequelize.query('CALL selectTeacherByLastName(:lastName)', 
         { replacements: {lastName}});
     }
+    else{
+      response = await sequelize.query('CALL selectAllTeachers');
+    }
 
     try {
-      const data = await Teacher.findAll(query);
-      res.send(data)
+      
+      res.send(response)
     } catch (err) {
       res.status(500).send({
         message:
@@ -132,46 +129,32 @@ module.exports = (sequelize, Teacher) => {
     }
   });
 
-    /**
-   * Retrieve preferred courses
+  /**
+   * Retrieve nonpreferred courses
    * @param {import("express").Request} req 
    * @param {import("express").Response} res 
    */
-  router.get("/availability/:id", async function findAvailabilityById(req, res) {
-     if (isNaN(Number(req.params.id))) {
-      res.status(400).send({
-        message: "Content can not be empty!"
-      });
-      return;
+  router.get("/nonpreferred/", async function findNonPreferredCourses(req, res) {
+    const teacherId = req.query.teacherId;
+    const lastName = req.query.lastName;
+    response ="";
+
+    if(teacherId){
+      response = await sequelize.query('CALL getTeacherNonPreferredCoursesById(:teacherId)', 
+        { replacements: {teacherId}});
     }
-    const id = req.params.id;
-    try {
-      const response = await sequelize.query('CALL getTeacherAvailabilityById(:id)', 
-        { replacements: {id}});
-      res.send(response);
-    } catch (err) {
-      res.status(500).send({
-        message:
-          err.message || "Some error occurred while retrieving teachers."
-      });
-    }
-  });
-     /**
-   * Retrieve availability
-   * @param {import("express").Request} req 
-   * @param {import("express").Response} res 
-   */
-  router.get("/availability/:lastName", async function findAvailabilityByLastName(req, res) {
-     if (isNaN(Number(req.params.lastName))) {
-      res.status(400).send({
-        message: "Content can not be empty!"
-      });
-      return;
-    }
-    const lastName = req.params.lastName;
-    try {
-      const response = await sequelize.query('CALL getAvailabilityByLastName(:lastName)', 
+    else if(lastName){
+      response = await sequelize.query('CALL getTeacherNonPreferredCoursesByLastName(:lastName)', 
         { replacements: {lastName}});
+    }
+    else{
+      res.status(400).send({
+        message: "Content can not be empty!"
+      });
+      return;
+    }
+    try {
+  
       res.send(response);
     } catch (err) {
       res.status(500).send({
@@ -180,6 +163,38 @@ module.exports = (sequelize, Teacher) => {
       });
     }
   });
+
+
+  router.get("/availability/", async function findAvailability(req, res) {
+    const teacherId = req.query.teacherId;
+    const lastName = req.query.lastName;
+    response ="";
+
+    if(teacherId){
+      response = await sequelize.query('CALL getTeacherAvailabilityById(:teacherId)', 
+        { replacements: {teacherId}});
+    }
+    else if(lastName){
+      response = await sequelize.query('CALL getTeacherAvailabilityByLastName(:lastName)', 
+        { replacements: {lastName}});
+    }
+    else{
+      res.status(400).send({
+        message: "Content can not be empty!"
+      });
+      return;
+    }
+    try {
+  
+      res.send(response);
+    } catch (err) {
+      res.status(500).send({
+        message:
+          err.message || "Some error occurred while retrieving teachers."
+      });
+    }
+  });
+
 
   /**
    * Update a Teacher by the id in the request

@@ -14,24 +14,25 @@ module.exports = (sequelize, Course) => {
    * @param {import("express").Response} res 
    */
   router.post("/", async function create(req, res) {
+
+      const courseId = req.query.courseId;
+      const courseName = req.query.courseName;
+    
     // Validate request
-    if (!req.body.courseName) {
+    if (!courseId || !courseName) {
       res.status(400).send({
-        message: "Content can not be empty!"
+        message: "CourseId and CourseName are required!"
       });
       return;
     }
   
     // Create a course
-    const course = {
-      courseId: req.body.courseId,
-      courseName: req.body.courseName
-    };
+
   
     try {
       // Save course in the database
-      const data = sequelize.query('CALL insertNewCourse(:courseId :courseTitle)',
-       { replacements: {courseId, courseTitle} });
+      const data = sequelize.query('CALL insertNewCourse(:courseId, :courseName)',
+       { replacements: {courseId, courseName} });
       // this is where we would call a stored procedure
       // or something to create a course
 
@@ -53,7 +54,11 @@ module.exports = (sequelize, Course) => {
     const courseName = req.query.courseName;
     const courseId = req.query.courseId;
     response = "";
-    if (courseName) {
+
+    if (courseId){
+      response = await sequelize.query('CALL getCoursesById(:courseId)', { replacements: {courseId}});
+    }
+    else if (courseName) {
       // if searching for all courses matching a name
       // Replace response with
       // await sequelize.query('CALL *stored procedure to select by name*(:name)', { replacements: {name}});
@@ -61,9 +66,6 @@ module.exports = (sequelize, Course) => {
       response = await sequelize.query('CALL getCoursesLikeName(:courseName)', 
         { replacements: {courseName}});
       
-    }
-    else if (courseId){
-      response = await sequelize.query('CALL getCoursesById(:courseId)', { replacements: {courseId}});
     }
     else{
       //  Replace response with 
